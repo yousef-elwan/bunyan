@@ -1,0 +1,10 @@
+/* Main Stylesheet - style.css */
+
+@import url('./global.css');
+@import url('./header.css');
+@import url('./hero-2.css');
+@import url('./categories.css');
+@import url('./featured-properties.css');
+@import url('./footer.css');
+@import url('./advanced-search-modal.css');
+@import url('./mobile-drawer-nav.css');

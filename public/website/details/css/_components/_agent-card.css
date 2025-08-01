@@ -1,0 +1,145 @@
+/* _components/_agent-card.css */
+.agent-contact-card-v3 h4 {
+    text-align: center;
+    color: var(--v3-primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+}
+
+.agent-info-v3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.agent-avatar-v3 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+    border: 2px solid var(--v3-border-color);
+    flex-shrink: 0;
+}
+
+.agent-info-v3 h5 {
+    margin-bottom: 2px;
+    font-size: 1rem;
+}
+
+/* Agent details */
+.agent-details-v3 {
+    font-size: 0.85rem;
+    color: var(--v3-text-light);
+}
+
+.agent-details-v3>div {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.agent-details-v3 i {
+    margin-right: 8px;
+    color: var(--v3-primary-color);
+    min-width: 16px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+/* --- NEW STYLES: Improved status notice --- */
+.agent-status-notice-v3 {
+    display: flex;
+    background-color: #fffbe6; /* Softer yellow background */
+    border-left: 4px solid #ffc107; /* Accent color border */
+    border-radius: 4px;
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    color: #856404; /* Dark yellow text for readability */
+}
+
+.agent-status-notice-v3 i {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    margin-top: 3px;
+    color: #ffc107;
+    flex-shrink: 0;
+}
+
+.agent-status-notice-v3 strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #664d03;
+    font-weight: 700;
+}
+
+.agent-status-notice-v3 p {
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #856404; /* Override default p color */
+}
+
+.agent-status-notice-v3 p:last-child {
+    margin-bottom: 0;
+}
+
+.agent-status-notice-v3 .reason-text {
+    font-size: 0.85rem;
+    border-top: 1px dashed #ffeeba;
+    padding-top: 8px;
+}
+
+.agent-status-notice-v3 .reason-text strong {
+    font-weight: 500;
+}
+
+.agent-status-notice-v3 .support-text a {
+    color: var(--v3-primary-color);
+    font-weight: 500;
+}
+.agent-status-notice-v3 .support-text a:hover {
+    text-decoration: underline;
+}
+
+/* --- REMOVED STYLES --- */
+/* .agent-blacklist-status-v3, .blacklist-alert-v3, .agent-disabled-v3 are no longer used. */
+
+
+/* Form styles */
+#contactAgentFormV3 {
+    padding-top: 15px;
+    border-top: 1px solid var(--v3-border-color);
+}
+
+#contactAgentFormV3 input,
+#contactAgentFormV3 textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--v3-border-color);
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+#contactAgentFormV3 input:focus,
+#contactAgentFormV3 textarea:focus {
+    outline: none;
+    border-color: var(--v3-primary-color);
+}
+
+#contactAgentFormV3 textarea {
+    resize: vertical;
+}
+
+.agent-action-buttons-v3 {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.agent-action-buttons-v3 .btn-v3 {
+    flex-grow: 1;
+}

@@ -1,0 +1,23 @@
+/* css/_variables.css */
+:root {
+    --v3-primary-color: #0062cc;
+    --v3-secondary-color: #495057;
+    --v3-success-color: #28a745;
+    --v3-danger-color: #dc3545;
+    --v3-accent-color: #ffc107;
+    --v3-bg-color: #f0f0f0;
+    /* From test page body, or your preferred bg */
+    --v3-card-bg: #FFFFFF;
+    --v3-card-bg-rgb: 255, 255, 255;
+    --v3-text-color: #212529;
+    --v3-text-light: #6c757d;
+    --v3-border-color: #dee2e6;
+    /* General border color */
+    --v3-border-radius: 8px;
+    --v3-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+    --v3-font-family: 'Tajawal', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    /* Variables from test-hero-3.html specific to hero gallery */
+    --v3-skeleton-bg: #e8e8e8;
+    --v3-image-hover-overlay: rgba(0, 0, 0, 0.15);
+}

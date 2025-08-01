@@ -1,0 +1,529 @@
+/* css/_components/_hero-gallery.css */
+
+/* --- HERO SECTION WRAPPER --- */
+.hero-swiper-section-v3 {
+    margin-bottom: 25px;
+    position: relative;
+    border: 1px solid #e0e0e0;
+    background-color: var(--v3-card-bg);
+    padding: 8px;
+    border-radius: var(--v3-border-radius);
+    /* Height is managed by child or specific class for grid/slider */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.hero-swiper-section-v3.layout-changing {
+    opacity: 0.7;
+}
+
+/* Class to set fixed height for grid layout */
+.hero-swiper-section-v3.grid-active-section {
+    height: 500px;
+    /* Or your desired fixed height for grid view */
+    max-height: 500px;
+}
+
+/* Class to set max viewport height for slider layout */
+.hero-swiper-section-v3.slider-active-section {
+    max-height: 75vh;
+    /* Max height for slider relative to viewport */
+}
+
+
+/* --- SWIPER CONTAINER (BASE FOR BOTH LAYOUTS) --- */
+.hero-swiper {
+    width: 100%;
+    height: 100%;
+    /* Will take height from parent or its own aspect ratio */
+    position: relative;
+}
+
+
+/* --- SLIDER LAYOUT STYLES (Mobile / Default for few images) --- */
+.hero-swiper.slider-layout-active {
+    border-radius: 0;
+    overflow: hidden;
+    flex-grow: 1;
+    /* Allow swiper to take up available vertical space */
+    min-height: 300px;
+    /* Minimum height for the slider */
+}
+
+.hero-swiper.slider-layout-active .swiper-wrapper {
+    display: flex;
+}
+
+.hero-swiper.slider-layout-active .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--v3-skeleton-bg);
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0;
+    position: relative;
+}
+
+.hero-swiper.slider-layout-active .swiper-slide a,
+.hero-swiper.slider-layout-active .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+}
+
+/* Slider Controls Visibility */
+.hero-swiper.slider-layout-active .swiper-pagination-slider,
+.hero-swiper.slider-layout-active .swiper-button-next-slider,
+.hero-swiper.slider-layout-active .swiper-button-prev-slider,
+.hero-swiper.slider-layout-active .swiper-progress-indicator {
+    display: flex !important;
+}
+
+.hero-swiper:not(.slider-layout-active) .swiper-pagination-slider,
+.hero-swiper:not(.slider-layout-active) .swiper-button-next-slider,
+.hero-swiper:not(.slider-layout-active) .swiper-button-prev-slider,
+.hero-swiper:not(.slider-layout-active) .swiper-progress-indicator {
+    display: none !important;
+}
+
+/* Slider Pagination (Dots) */
+.hero-swiper .swiper-pagination-slider {
+    position: absolute;
+    bottom: 10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    z-index: 10;
+}
+
+.hero-swiper .swiper-pagination-slider .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.65);
+    opacity: 1;
+    margin: 0 4px !important;
+    border-radius: 50%;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.hero-swiper .swiper-pagination-slider .swiper-pagination-bullet-active {
+    background-color: var(--v3-primary-color);
+    transform: scale(1.25);
+}
+
+/* Slider Navigation Arrows */
+.hero-swiper .swiper-button-next-slider,
+.hero-swiper .swiper-button-prev-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.hero-swiper .swiper-button-next-slider:hover,
+.hero-swiper .swiper-button-prev-slider:hover {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.hero-swiper .swiper-button-next-slider {
+    right: 12px;
+}
+
+.hero-swiper .swiper-button-prev-slider {
+    left: 12px;
+}
+
+[dir="rtl"] .hero-swiper .swiper-button-next-slider {
+    left: 12px;
+    right: auto;
+}
+
+[dir="rtl"] .hero-swiper .swiper-button-prev-slider {
+    right: 12px;
+    left: auto;
+}
+
+.hero-swiper .swiper-button-next-slider::after,
+.hero-swiper .swiper-button-prev-slider::after {
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+/* Slider Progress Indicator (Optional) */
+.swiper-progress-indicator {
+    position: absolute;
+    bottom: 12px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+[dir="ltr"] .swiper-progress-indicator {
+    left: 15px;
+}
+
+[dir="rtl"] .swiper-progress-indicator {
+    right: 15px;
+}
+
+
+/* --- Thumbnail Container & Thumbnails (For Slider Layout) --- */
+.hero-swiper-section-v3 .thumbnail-container-v3 {
+    display: none;
+    gap: 8px;
+    justify-content: flex-start;
+    margin-top: 8px;
+    overflow-x: auto;
+    padding: 5px 0px;
+    background-color: transparent;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--v3-primary-color) #e0e0e0;
+    flex-shrink: 0; 
+}
+
+.hero-swiper.slider-layout-active+.thumbnail-container-v3 {
+    display: flex !important;
+}
+
+.hero-swiper-section-v3 .thumbnail-container-v3::-webkit-scrollbar {
+    height: 5px;
+}
+
+.hero-swiper-section-v3 .thumbnail-container-v3::-webkit-scrollbar-thumb {
+    background-color: var(--v3-primary-color);
+    border-radius: 3px;
+}
+
+.hero-swiper-section-v3 .thumbnail-container-v3::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.thumbnail-v3 {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, opacity 0.2s, transform 0.2s;
+    opacity: 0.7;
+    flex-shrink: 0;
+    background-color: var(--v3-skeleton-bg);
+}
+
+.thumbnail-v3.active,
+.thumbnail-v3:hover {
+    border-color: var(--v3-primary-color);
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.thumbnail-v3.loaded:not(.active) {
+    opacity: 0.7;
+}
+
+.thumbnail-v3.active.loaded {
+    opacity: 1;
+}
+
+
+/* --- GRID LAYOUT STYLES (Medium/Large Screens) --- */
+.hero-swiper.grid-layout-active {
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    height: 100%;
+    /* Takes full height of parent section (which should have fixed height for grid) */
+}
+
+.hero-swiper.grid-layout-active .swiper-wrapper {
+    display: flex;
+    gap: 8px;
+    height: 100%;
+    transform: none !important;
+}
+
+.hero-swiper.grid-layout-active .swiper-slide {
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--v3-skeleton-bg);
+    width: auto !important;
+    margin-right: 0 !important;
+    display: flex;
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), filter 0.3s ease;
+}
+
+/* Grid Image Hover Effects */
+.hero-swiper.grid-layout-active .swiper-slide:not(.has-more-photos-overlay)>a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--v3-image-hover-overlay);
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.hero-swiper.grid-layout-active .swiper-slide:not(.has-more-photos-overlay)>a:hover::after {
+    opacity: 1;
+}
+
+.hero-swiper.grid-layout-active .swiper-slide:not(.has-more-photos-overlay)>a:hover img {
+    transform: scale(1.04);
+}
+
+.hero-swiper.grid-layout-active.grid-hover-active .swiper-slide:not(:hover):not(.has-more-photos-overlay) {
+    filter: brightness(0.9) saturate(0.9);
+    transform: scale(0.98);
+}
+
+.hero-swiper.grid-layout-active .swiper-slide a,
+.hero-swiper.grid-layout-active .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Grid Structure */
+.hero-swiper.grid-layout-active .swiper-slide.grid-main-image {
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.small-images-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    flex-grow: 1;
+    /* flex-shrink: 0; #TEST*/
+    min-width: 0;
+}
+
+.small-images-grid .swiper-slide {
+    flex-grow: 1;
+    min-height: 0;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.small-image-row {
+    display: flex;
+    gap: 8px;
+    flex-grow: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+.small-image-row .swiper-slide {
+    flex-basis: 50%;
+    flex-grow: 1;
+    min-width: 0;
+    height: 100% !important;
+}
+
+.small-image-row .swiper-slide:only-child {
+    flex-basis: 100%;
+}
+
+/* Grid Sizing Presets */
+.hero-swiper.grid-layout-active.medium-grid .swiper-slide.grid-main-image {
+    flex-basis: 60%;
+}
+
+.hero-swiper.grid-layout-active.large-grid .swiper-slide.grid-main-image {
+    flex-basis: 55%;
+}
+
+/* "View All Photos" Overlay for Grid */
+.swiper-slide.has-more-photos-overlay {
+    position: relative; /* Needed for absolute positioning of pseudo-elements on child 'a' */
+    cursor: pointer;
+    overflow: hidden; /* Ensure pseudo-elements don't overflow the rounded corners */
+    border-radius: inherit; /* Inherit slide's border-radius if any */
+}
+
+.swiper-slide.has-more-photos-overlay > a {
+    display: block; /* Make anchor fill the slide */
+    width: 100%;
+    height: 100%;
+    position: relative; /* Crucial for positioning ::before and ::after */
+    color: white; /* Default text color for children (like the text in ::after) */
+    text-decoration: none;
+}
+
+/* The dark background and text overlay */
+.swiper-slide.has-more-photos-overlay > a::after {
+    content: attr(data-more-photos-text); /* Get text from data attribute */
+    position: absolute;
+    inset: 0; /* Cover the entire anchor tag */
+    display: flex;
+    flex-direction: column; /* Stack icon (from ::before) and text if needed, or just center text */
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.65); /* Semi-transparent dark background */
+    color: white; /* Text color */
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 28px; /* Make space for the icon that will be in ::before */
+    box-sizing: border-box;
+    border-radius: inherit; /* Inherit from parent anchor if it has one, or slide */
+    opacity: 1; /* Should be visible */
+    transition: background-color 0.2s ease-in-out;
+    z-index: 1; /* Above the image, below ::before if icon needs to be on top */
+}
+
+.swiper-slide.has-more-photos-overlay:hover > a::after {
+    background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+}
+
+/* The icon for the overlay */
+.swiper-slide.has-more-photos-overlay > a::before {
+    content: '\f03e'; /* Font Awesome "images" icon (fa-images) */
+    font-family: "Font Awesome 6 Free"; /* Crucial: Specify Font Awesome family */
+    font-weight: 900; /* For solid icons */
+    font-size: 1.8rem; /* Size of the icon */
+    color: white; /* Icon color */
+    position: absolute;
+    top: 40%; /* Adjust vertical position as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Icon on top of the dark overlay (::after) */
+    pointer-events: none; /* Allow clicks to pass through to the anchor if needed */
+}
+
+/* Ensure the image itself doesn't cover the overlay */
+.swiper-slide.has-more-photos-overlay > a > img {
+    position: relative; /* Or ensure its z-index is lower than overlay pseudo-elements */
+    z-index: 0; /* Image behind overlay elements */
+    /* Other image styles (width, height, object-fit, border-radius) should be applied as before */
+}
+
+
+
+/* --- IMAGE LOADING STATES & SKELETON/SHIMMER --- */
+.hero-swiper .swiper-slide>a::before,
+.hero-swiper .swiper-slide:not(:has(>a))::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 20%, rgba(255, 255, 255, 0.25) 50%, transparent 80%);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: inherit;
+    animation-name: shimmerHeroV3_LTR;
+    /* Default LTR animation */
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+[dir="rtl"] .hero-swiper .swiper-slide>a::before,
+[dir="rtl"] .hero-swiper .swiper-slide:not(:has(>a))::before {
+    left: auto;
+    right: 0;
+    background: linear-gradient(to left, transparent 20%, rgba(255, 255, 255, 0.25) 50%, transparent 80%);
+    animation-name: shimmerHeroV3_RTL;
+    /* Apply RTL specific animation */
+}
+
+.hero-swiper .swiper-slide img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    position: relative;
+    z-index: 2;
+    border-radius: inherit;
+}
+
+/* Show shimmer if image has .loading class */
+.hero-swiper .swiper-slide a:has(img.loading)::before,
+.hero-swiper .swiper-slide:has(> img.loading)::before {
+    opacity: 1;
+}
+
+.hero-swiper .swiper-slide img.loaded {
+    opacity: 1;
+}
+
+/* Hide shimmer once image has .loaded class */
+.hero-swiper .swiper-slide a:has(img.loaded)::before,
+.hero-swiper .swiper-slide:has(> img.loaded)::before {
+    opacity: 0 !important;
+    animation-name: none !important;
+}
+
+/* LTR Shimmer Animation */
+@keyframes shimmerHeroV3_LTR {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* RTL Shimmer Animation */
+@keyframes shimmerHeroV3_RTL {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Image Error State */
+.hero-swiper .swiper-slide a.img-error::after {
+    content: '\f071';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--v3-text-light);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--v3-skeleton-bg);
+    border-radius: inherit;
+}
+
+.hero-swiper .swiper-slide img.error {
+    display: none !important;
+}

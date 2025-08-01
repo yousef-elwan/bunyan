@@ -1,0 +1,307 @@
+/* --- Hero Section Styles --- */
+.hero-section {
+    position: relative;
+    padding: 80px 0;
+    background-size: cover;
+    background-position: center center;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    /* As per screenshot */
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--white-color);
+}
+
+.hero-content .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+    /* Lighter text for subtitle */
+}
+
+.hero-search-form {
+    background-color: rgba(255, 255, 255, 0.15);
+    /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+    /* Optional: blur effect */
+}
+
+.search-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search-tabs .tab-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    /* Align with container border */
+}
+
+.search-tabs .tab-btn.active {
+    color: var(--white-color);
+    border-bottom-color: var(--secondary-color);
+    /* Use a highlight color */
+}
+
+.search-tabs .tab-btn:hover {
+    color: var(--white-color);
+}
+
+.search-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Responsive grid */
+    gap: 15px;
+    align-items: center;
+}
+
+.search-fields .form-group {
+    /* No specific styles needed here unless for alignment */
+}
+
+.search-fields input[type="text"],
+.search-fields input[type="number"],
+.search-fields select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    /* Rounded inputs */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Slightly opaque white */
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.search-fields input[type="text"]:focus,
+.search-fields input[type="number"]:focus,
+.search-fields select:focus {
+    outline: none;
+}
+
+.search-fields input[type="text"]::placeholder,
+.search-fields input[type="number"]::placeholder {
+    /* color: var(--text-color-light); */
+}
+
+.search-fields select {
+    appearance: none;
+    /* For custom arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    /* RTL: left */
+    padding-left: 35px;
+    /* Space for arrow */
+}
+
+.form-group-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Space out link and button */
+    grid-column: span 2;
+    /* Make this group span more columns if needed */
+}
+
+.advanced-search-link {
+    color: var(--white-color);
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.advanced-search-link:hover {
+    color: var(--secondary-color);
+}
+
+.search-submit-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    /* Rounded button */
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Hero */
+@media (max-width: 992px) {
+    .search-fields {
+        grid-template-columns: 1fr 1fr;
+        /* Two columns on tablet */
+    }
+
+    .form-group-actions {
+        grid-column: span 2;
+        /* Ensure it spans full width if it's the last item */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+
+    .search-fields {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+
+    .form-group-actions {
+        grid-column: span 1;
+        flex-direction: column;
+        /* Stack link and button */
+        gap: 10px;
+    }
+
+    .search-submit-btn {
+        width: 100%;
+    }
+
+    .search-tabs .tab-btn {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+
+.animated-hero-title {
+    font-size: 2.8rem;
+    /* Match your h1 style */
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--white-color);
+    line-height: 1.2;
+    /* Adjust for multi-line if text wraps */
+}
+
+.static-hero-text {
+    /* Style for the static part if needed */
+}
+
+.cd-words-wrapper {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    /* Or bottom, or middle, depending on alignment preference */
+}
+
+.cd-words-wrapper b.item-text {
+    display: inline-block;
+    /* Or just inline */
+    white-space: nowrap;
+    color: var(--white-color);
+    /* Ensure it inherits or has the right color */
+    /* For RTL, cursor is on the left */
+    animation: blinkCursor 0.7s infinite;
+    padding-left: 2px;
+    /* Small space for cursor for RTL */
+    /* Counteract padding for alignment */
+
+    /* Add blinking cursor */
+    /* border-right: 2px solid rgba(255, 255, 255, 0.75); */
+    /* border-right: 2px solid  var(--primary-color); */
+    /* margin-right: -2px; */
+}
+
+html[dir='rtl'] .cd-words-wrapper b.item-text {
+    border-left: 2px solid var(--primary-color);
+    margin-left: -2px;
+}
+
+html[dir='ltr'] .cd-words-wrapper b.item-text {
+    border-right: 2px solid var(--primary-color);
+    margin-right: -2px;
+}
+
+.cd-words-wrapper b.item-text.is-visible {
+    position: relative;
+    /* Take up space in the flow */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alternative Animation: Typing Effect (more complex, usually needs more JS) */
+/* For a simple reveal/hide without fancy CSS transitions, JS can just toggle is-visible and is-hidden */
+.cd-words-wrapper b.item-text.is-hidden {
+    /* This class isn't strictly needed if we just use opacity and transform for is-visible */
+    /* But it's in your original HTML, so you might have CSS for it */
+}
+
+
+@keyframes blinkCursor {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    50% {
+        /* border-color: rgba(255, 255, 255, 0.75); */
+        border-color: var(--primary-color);
+    }
+}
+
+@media (max-width: 768px) {
+    .animated-hero-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-hero-title {
+        font-size: 1.8rem;
+    }
+
+    .cd-words-wrapper b.item-text {
+        border-right-width: 1px;
+        /* Thinner cursor on small screens */
+    }
+}

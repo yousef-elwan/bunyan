@@ -1,0 +1,49 @@
+/* _components/_header.css */
+.site-header-v3 {
+    background-color: var(--v3-card-bg);
+    padding: 15px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header-v3 .container-v3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-v3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--v3-primary-color);
+}
+
+.main-nav-v3 a {
+    margin: 0 12px;
+    color: var(--v3-text-light);
+    font-weight: 500;
+    padding-bottom: 5px;
+    transition: color 0.2s;
+}
+
+.main-nav-v3 a.active,
+.main-nav-v3 a:hover {
+    color: var(--v3-primary-color);
+    text-decoration: none;
+}
+
+.user-actions-v3 {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu-toggle-v3 {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--v3-primary-color);
+}

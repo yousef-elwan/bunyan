@@ -1,0 +1,252 @@
+/* _components/_tabs.css */
+.tab-section-v3 {
+    position: relative;
+}
+
+/* New wrapper for tabs and scroll buttons */
+.tabs-wrapper-v3 {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tab-buttons-v3 {
+    display: flex;
+    border-bottom: 1px solid var(--v3-border-color);
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* Add scroll-padding to prevent tabs from hiding under the arrows */
+    scroll-padding: 0 40px;
+    scroll-behavior: smooth;
+    /* Smooth scrolling for JS actions */
+}
+
+.tab-buttons-v3::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- Scroll Hints (Gradients + Buttons) --- */
+
+/* Gradient Fades */
+.tabs-wrapper-v3::before,
+.tabs-wrapper-v3::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 6px;
+    /* Align with tab buttons bottom border */
+    width: 60px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tabs-wrapper-v3::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(var(--v3-card-bg-rgb), 0) 0%, rgba(var(--v3-card-bg-rgb), 1) 100%);
+}
+
+.tabs-wrapper-v3::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(var(--v3-card-bg-rgb), 0) 0%, rgba(var(--v3-card-bg-rgb), 1) 100%);
+}
+
+.tabs-wrapper-v3.show-scroll-hint-start::before {
+    opacity: 1;
+}
+
+.tabs-wrapper-v3.show-scroll-hint-end::after {
+    opacity: 1;
+}
+
+/* Arrow Buttons */
+.tab-scroll-btn-v3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateY(-3px);
+    /* Adjust vertical alignment */
+    height: 32px;
+    width: 32px;
+    background-color: #fff;
+    color: var(--v3-primary-color);
+    border: 1px solid var(--v3-border-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    /* On top of the gradient */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.tab-scroll-btn-v3:hover {
+    transform: translateY(-50%) translateY(-3px) scale(1.1);
+    background-color: var(--v3-primary-color);
+    color: #fff;
+}
+
+.tab-scroll-btn-v3.left {
+    left: 5px;
+}
+
+.tab-scroll-btn-v3.right {
+    right: 5px;
+}
+
+.tabs-wrapper-v3.show-scroll-hint-start .tab-scroll-btn-v3.left,
+.tabs-wrapper-v3.show-scroll-hint-end .tab-scroll-btn-v3.right {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Tab Button Styles (Unchanged) */
+.tab-button-v3 {
+    background: none;
+    border: none;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--v3-text-light);
+    position: relative;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.tab-button-v3::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--v3-primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    z-index: 3;
+}
+
+.tab-button-v3.active {
+    color: var(--v3-primary-color);
+}
+
+.tab-button-v3.active::after {
+    transform: scaleX(1);
+}
+
+.tab-button-v3:hover {
+    color: var(--v3-primary-color);
+    text-decoration: none;
+}
+
+.tab-content-v3 {
+    display: none;
+    animation: fadeInTabV3 0.4s;
+}
+
+.tab-content-v3.active {
+    display: block;
+}
+
+.attributes-list-v3,
+.amenities-list-v3,
+.nearby-list-v3 {
+    list-style: none;
+    padding: 0;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.attributes-list-v3 li,
+.amenities-list-v3 li,
+.nearby-list-v3 li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.attributes-list-v3 li i,
+.amenities-list-v3 li i,
+.nearby-list-v3 li i {
+    margin-left: 8px;
+    color: var(--v3-primary-color);
+    font-size: 1em;
+    width: 20px;
+    text-align: center;
+}
+
+.amenities-list-v3 li i {
+    color: var(--v3-accent-color);
+}
+
+.nearby-list-v3 .place-distance-v3 {
+    margin-right: auto;
+    color: var(--v3-text-light);
+    font-size: 0.85em;
+}
+
+.video-container-v3,
+.map-container-v3 {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--v3-border-radius);
+}
+
+.video-container-v3 iframe,
+.map-container-v3 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.map-container-v3 {
+    height: 350px;
+    padding-bottom: 0;
+}
+
+.video-placeholder-v3 {
+    position: relative;
+    display: inline-block;
+    /* Or block if you want it full width */
+    text-align: center;
+    width: 100%;
+    /* For the button fallback */
+}
+
+.video-placeholder-v3 img {
+    display: block;
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 10px;
+    pointer-events: none;
+    /* So click goes to parent */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.video-placeholder-v3:hover .play-button-overlay {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #fff;
+}

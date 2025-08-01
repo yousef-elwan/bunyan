@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'meta_title' => 'Terms of Use',
+    'meta_description' => 'Learn about the terms governing your use of our real estate website and services.',
+    'meta_keywords' => 'Terms of Use, Site Usage, User Rights, Real Estate',
+    'og_title' => 'Terms of Use',
+    'og_description' => 'Learn about the terms governing your use of our real estate website and services.',
+    'og_image' => 'https://via.placeholder.com/1200x630/607D8B/ffffff?text=Terms+of+Use+Banner',
+    'og_url' => '[Actual Terms of Use Page URL Here]',
+    'twitter_card' => 'summary_large_image',
+    'twitter_title' => 'Terms of Use',
+    'twitter_description' => 'Learn about the terms governing your use of our real estate website and services.',
+    'twitter_image' => 'https://via.placeholder.com/1200x600/607D8B/ffffff?text=Terms+of+Use+Banner',
+    'banner_subtitle' => 'Legal Affairs',
+    'banner_title' => 'Terms of Use',
+    'sidebar_legal_documents' => 'Legal Documents',
+    'sidebar_privacy_policy' => 'Privacy Policy',
+    'sidebar_terms_of_service' => 'Terms of Service',
+    'sidebar_contact_us' => 'Contact Us',
+    'sidebar_need_help' => '? Need Help ',
+    'sidebar_help_center' => 'Go to Help Center',
+    'sidebar_email_info' => 'Or contact via email:',
+    'content_category_label' => 'General Site Terms of Use',
+    'last_updated' => 'Last updated: :date',
+];

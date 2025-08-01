@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+
+:root {
+  --primary: #3498db;
+  --dark-blue: #2c3e50;
+  --light-text: #ecf0f1;
+  --medium-text: #bdc3c7;
+  --dark-text: #333;
+  --border-color: #e0e0e0;
+  --active-item-bg: #1f2b38;
+  --active-submenu-bg: #3a536a;
+  --header-height: 50px;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Custom styles for sidebar transitions */
+.sidebar {
+  transition: width 0.3s ease;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.has-submenu.submenu-open>.submenu {
+  max-height: 500px;
+}
+
+.user-profile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.user-profile-dropdown.open {
+  max-height: 200px;
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* auth */
+/*
+ * ===============================================
+ *   تنسيقات مؤشر قوة كلمة المرور (Password Strength Meter)
+ * ===============================================
+ */
+
+/* الحاوية الرئيسية للمؤشر، تكون مخفية بشكل افتراضي */
+.password-strength-meter {
+    margin-top: 8px;
+    width: 100%;
+    display: none; /* يتم إظهاره عبر JavaScript عند بدء الكتابة */
+}
+
+/* الشريط الذي يوضح القوة */
+.strength-bar {
+    height: 6px;
+    background-color: #e9ecef; /* لون الخلفية الافتراضي للشريط */
+    border-radius: 3px;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    width: 0%; /* يبدأ فارغًا */
+}
+
+/* النص الذي يصف القوة (ضعيفة، متوسطة، قوية) */
+.strength-text {
+    margin-top: 4px;
+    font-size: 12px;
+    text-align: right; /* يمكنك تغييره إلى left إذا كان تصميمك يتطلب ذلك */
+    color: #6c757d; /* لون النص الافتراضي */
+    transition: color 0.3s ease-in-out;
+}
+
+/*
+ * --- حالات قوة كلمة المرور ---
+ */
+
+/* 1. ضعيفة (Weak) */
+.strength-bar.weak {
+    width: 33.33%;
+    background-color: #dc3545; /* أحمر */
+}
+
+/* 2. متوسطة (Medium) */
+.strength-bar.medium {
+    width: 66.66%;
+    background-color: #ffc107; /* أصفر */
+}
+
+/* 3. قوية (Strong) */
+.strength-bar.strong {
+    width: 100%;
+    background-color: #28a745; /* أخضر */
+}

@@ -1,0 +1,51 @@
+<?php
+// lang/en/dashboard/condition.php
+return [
+    'list' => [
+        'page_title' => 'Property Conditions',
+        'add_new_button' => 'Add New Condition',
+        'refresh_button' => 'Refresh',
+        'name' => 'Name',
+        'addon' => 'Date Added',
+        'actions' => 'Actions',
+        'no_data_found' => 'No property conditions found.',
+        'error_loading' => 'Error loading property conditions.',
+
+        'pagination_info' => 'Showing :from to :to of :total results',
+
+        'edit_tooltip' => 'Edit',
+        'delete_tooltip' => 'Delete',
+        'confirm_delete_title' => 'Are you sure?',
+        'confirm_delete_text' => "You won't be able to revert this!",
+        'confirm_delete_button' => 'Yes, delete it!',
+        'cancel_button' => 'Cancel',
+        'delete_success_title' => 'Deleted!',
+        'delete_success_text' => 'The property condition has been deleted.',
+        'error_title' => 'Error!',
+        'delete_error_text' => 'Failed to delete the property condition: :error',
+    ],
+    'create' => [
+        'page_title' => 'Add New Condition',
+        'primaryinfo' => 'Primary Information',
+        'entername' => 'Enter Name',
+        'save' => 'Save',
+        'cancel' => 'Cancel',
+        'saving' => 'Saving...',
+        'create_success_title' => 'Success!',
+        'create_success_text' => 'The property condition has been created successfully.',
+        'error_title' => 'Error!',
+        'form_error_text' => 'Failed to save the property condition. Please try again.',
+    ],
+    'edit' => [
+        'page_title' => 'Edit Condition',
+        'primaryinfo' => 'Primary Information',
+        'entername' => 'Enter Name',
+        'save' => 'Save Changes',
+        'cancel' => 'Cancel',
+        'saving' => 'Saving...',
+        'update_success_title' => 'Success!',
+        'update_success_text' => 'The property condition has been updated successfully.',
+        'error_title' => 'Error!',
+        'form_error_text' => 'Failed to save the property condition. Please try again.',
+    ],
+];

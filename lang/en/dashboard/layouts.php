@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'aside' => [
+        'my_profile' => 'My Profile',
+        'account_setting' => 'Account Setting',
+        'admin' => 'admin',
+        'project' => 'Projects',
+        'dashboard' => 'Dashboard',
+        'properties' => 'Properties',
+        'blacklist' => 'Blacklist',
+        'favorite' => 'Favorite',
+        'all_Properties' => 'All Properties',
+        'my_Properties' => 'My Properties',
+        'addProp' => 'Add New Property',
+        'chatting' => 'Chatting',
+        'notifications' => 'Notifications',
+        'profile' => 'Profile',
+        'floor' => 'Floors',
+        'users' => 'Users',
+        'subscriptions' => 'Subscriptions',
+        'condition' => 'Conditions',
+        'orientation' => 'Orientations',
+        'category' => 'Categories',
+        'type' => 'Types',
+        'reports' => 'Reports',
+        'config' => 'Config',
+        'logout' => 'Logout',
+        'back_to_website' => 'Back To Website',
+    ],
+];

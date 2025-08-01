@@ -1,0 +1,116 @@
+/* _responsive.css */
+@media (max-width: 992px) {
+    .property-layout-v3 {
+        flex-direction: column;
+    }
+
+    .sidebar-v3 {
+        margin-top: 25px;
+    }
+
+    .sticky-sidebar-v3 {
+        position: static;
+    }
+
+    .attributes-list-v3,
+    .amenities-list-v3,
+    .nearby-list-v3 {
+        column-count: 1;
+    }
+
+    .hero-swiper {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav-v3,
+    .user-actions-v3 {
+        display: none;
+    }
+
+    .mobile-menu-toggle-v3 {
+        display: block;
+    }
+
+    .site-header-v3.mobile-menu-open-v3 .main-nav-v3,
+    .site-header-v3.mobile-menu-open-v3 .user-actions-v3 {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background-color: var(--v3-card-bg);
+        box-shadow: var(--v3-shadow);
+        padding: 15px;
+        border-top: 1px solid var(--v3-border-color);
+    }
+
+    .site-header-v3.mobile-menu-open-v3 .main-nav-v3 a,
+    .site-header-v3.mobile-menu-open-v3 .user-actions-v3>* {
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    h1 { /* Overriding base h1 */
+        font-size: 1.7rem;
+    }
+
+    .price-tag-v3 {
+        font-size: 1.8rem;
+    }
+
+    .price-actions-v3 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .actions-bar-v3 {
+        margin-top: 10px;
+    }
+
+    .hero-swiper {
+        height: 45vh;
+    }
+
+    .thumbnail-v3 {
+        width: 80px;
+        height: 55px;
+    }
+
+    .agent-action-buttons-v3 {
+        flex-direction: column;
+    }
+
+    .floating-btn-v3.visible { /* Make sure this applies to .floating-btn-v3 */
+        display: inline-flex;
+        animation: fadeInFloatingBtn 0.3s ease-out;
+    }
+
+    .container-v3{
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-swiper {
+        height: 40vh;
+    }
+
+    .modal-content-v3 {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .site-footer-bottom-v3 .container-v3 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-share-buttons-v3 {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,551 @@
+/* css/_components/_modals.css */
+
+/* --- General Modal Styles --- */
+.modal-v3 {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.65);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.modal-content-v3 {
+    background-color: var(--v3-card-bg);
+    margin: auto;
+    padding: 25px;
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+    animation: slideInModalV3 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    text-align: center;
+}
+
+@keyframes slideInModalV3 {
+    from {
+        transform: translateY(-25px) scale(0.97);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.close-modal-v3 {
+    color: #9ca3af;
+    position: absolute;
+    top: 15px;
+    font-size: 26px;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 1;
+    padding: 8px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+[dir="rtl"] .close-modal-v3 {
+    left: 15px;
+    right: auto;
+}
+
+[dir="ltr"] .close-modal-v3 {
+    right: 15px;
+    left: auto;
+}
+
+.close-modal-v3:hover {
+    color: var(--v3-danger-color);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.modal-content-v3 h3 {
+    margin-top: 5px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--v3-text-color);
+}
+
+/* --- Unified Copy Action Button Styles (for Share Modal Copy Button) --- */
+.copy-action-btn {
+    /* This is for the button itself, not the inline icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--v3-border-radius);
+    cursor: pointer;
+}
+
+.copy-action-btn i {
+    /* Icon within a full button */
+    font-size: 1em;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.copy-action-btn.copied {
+    background-color: var(--v3-success-color) !important;
+    color: white !important;
+    border-color: var(--v3-success-color) !important;
+}
+
+.copy-action-btn.copied .copy-btn-text {
+    animation: copiedTextAnimV3 0.4s ease-out forwards;
+}
+
+.copy-action-btn.copied i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.copy-action-btn.copied i::before {
+    content: '\f00c';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+@keyframes copiedTextAnimV3 {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    20% {
+        opacity: 0;
+        transform: translateY(3px) scale(0.95);
+    }
+
+    21% {
+        opacity: 0;
+        transform: translateY(-5px) scale(0.95);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(0) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* --- Report Modal --- */
+html[dir='rtl'] #reportPropertyModal .form-group-v3 {
+    text-align: right;
+}
+html[dir='ltr'] #reportPropertyModal .form-group-v3 {
+    text-align: left;
+}
+
+#reportPropertyModal .modal-content-v3 h3 {
+    color: var(--v3-primary-color);
+}
+
+
+/* --- "Show Mobile Number" Modal --- */
+.mobile-modal-content-v3 {
+    max-width: 350px;
+    padding: 30px 25px;
+}
+
+.mobile-modal-content-v3 h3 {
+    color: var(--v3-primary-color);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+.mobile-number-display-v3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.agent-number-input-like-v3 {
+    /* Wrapper for number and inline copy icon */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f4f6f8;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 15px;
+    /* Adjusted padding */
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    direction: ltr;
+    position: relative;
+    /* For copied feedback on icon */
+}
+
+#agentMobileNumberDisplay {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--v3-text-color);
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+    flex-grow: 1;
+    text-align: left;
+    /* Number aligns left in LTR box */
+    padding-right: 8px;
+    /* Space from copy icon if icon is on right */
+}
+
+[dir="rtl"] #agentMobileNumberDisplay {
+    /* When page is RTL, but number box is LTR */
+    text-align: right;
+    /* Number still aligns to its container's start */
+    padding-left: 8px;
+    padding-right: 0;
+}
+
+.copy-icon-btn-v3 {
+    /* The inline copy icon button */
+    background-color: transparent;
+    border: none;
+    color: var(--v3-text-light);
+    font-size: 1.2rem;
+    /* Icon size */
+    padding: 8px;
+    /* Click area */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
+    position: relative;
+    /* For the feedback span */
+}
+
+.copy-icon-btn-v3:hover {
+    color: var(--v3-primary-color);
+    transform: scale(1.1);
+}
+
+.copy-icon-btn-v3.copied {
+    color: var(--v3-success-color) !important;
+}
+
+.copy-icon-btn-v3.copied i::before {
+    content: '\f00c';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+.copy-icon-btn-v3 .copied-feedback-v3 {
+    /* Feedback text for inline icon */
+    position: absolute;
+    bottom: calc(100% + 6px);
+    /* Above the icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    /* Start hidden or slightly up */
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+    z-index: 10;
+}
+
+.copy-icon-btn-v3.copied .copied-feedback-v3.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+    /* Animate upwards */
+}
+
+.call-now-btn {
+    background-color: var(--v3-primary-color);
+    border-color: var(--v3-primary-color);
+    color: white;
+    width: 100%;
+    max-width: 300px;
+    /* Match number box width */
+    padding: 12px 15px;
+    font-weight: 600;
+    border-radius: var(--v3-border-radius);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.call-now-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.call-now-btn i {
+    font-size: 1.05em;
+}
+
+.modal-note-v3 {
+    font-size: 0.8rem;
+    color: var(--v3-text-light);
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+
+/* --- "Share" Modal --- */
+
+.share-modal-content-refined {
+    max-width: 420px;
+    /* Default max-width for single column / smaller views */
+    padding: 30px 20px;
+}
+
+.share-modal-content-refined h3 {
+    color: var(--v3-primary-color);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+
+.share-options-v3 {
+    width: 100%;
+}
+
+.share-link-section-v3 {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    align-items: stretch;
+}
+
+.share-link-section-v3 input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #f9fafb;
+    color: var(--v3-text-color);
+    box-sizing: border-box;
+    text-align: left;
+    direction: ltr;
+    height: auto;
+}
+
+#copyShareLinkBtn {
+    /* This uses .copy-action-btn and .btn-v3-outline */
+    flex-shrink: 0;
+    width: auto;
+    padding-left: 18px;
+    padding-right: 18px;
+    color: var(--v3-primary-color);
+    border-color: var(--v3-primary-color);
+    border-width: 1.5px;
+}
+
+#copyShareLinkBtn:hover {
+    background-color: var(--v3-primary-color);
+    color: white;
+}
+
+.share-via-text-v3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    color: var(--v3-text-light);
+}
+
+
+.social-share-list-v3 {
+    /* display: flex; */
+    /* Default to single column stack for smaller screens */
+    /* flex-direction: column;
+    gap: 10px;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two equal columns */
+    gap: 12px;
+    width: 100%;
+}
+
+.social-share-item-v3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+    box-sizing: border-box;
+    gap: 12px;
+    text-align: center;
+}
+
+.social-share-item-v3:hover {
+    opacity: 0.9;
+    transform: scale(1.015);
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-share-item-v3 i {
+    font-size: 1.25em;
+    width: 20px;
+    text-align: center;
+}
+
+.social-share-item-v3.whatsapp {
+    background-color: #25D366;
+}
+
+.social-share-item-v3.twitter {
+    background-color: #1DA1F2;
+}
+
+.social-share-item-v3.facebook {
+    background-color: #1877F2;
+}
+
+.social-share-item-v3.email {
+    background-color: #6c757d;
+}
+
+.social-share-item-v3.linkedin {
+    background-color: #0A66C2;
+}
+
+.social-share-item-v3.telegram {
+    background-color: #26A5E4;
+}
+
+/* Media Query for 2-column Share Dialog on small screens */
+@media (max-width: 420px) {
+
+    /* Breakpoint for share dialog specifically */
+    .share-modal-content-refined {
+        /* max-width: 95%; If needed */
+        max-width: 560px;
+        padding: 25px 15px 25px 15px;
+    }
+
+    .social-share-list-v3 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Two equal columns */
+        gap: 12px;
+        /* Gap between columns and rows */
+    }
+
+    .social-share-item-v3 {
+        font-size: 0.8rem;
+        /* Smaller text */
+        padding: 10px 5px;
+        /* Adjust padding */
+        gap: 5px;
+    }
+
+    .social-share-item-v3 i {
+        font-size: 1.1em;
+    }
+
+    .share-link-section-v3 {
+        flex-direction: column;
+        /* Stack input and copy button */
+    }
+
+    #copyShareLinkBtn {
+        width: 100%;
+        /* Full width in stacked layout */
+    }
+}
+
+
+/* Very Small Screens (Optional: if single column buttons get too cramped on very narrow screens) */
+@media (max-width: 359px) {
+    .share-modal-content-refined {
+        padding: 25px 15px;
+    }
+
+    .social-share-item-v3 {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .social-share-item-v3 i {
+        font-size: 1.1em;
+    }
+
+    .share-link-section-v3 {
+        flex-direction: column;
+        /* Stack input and copy button */
+    }
+
+    #copyShareLinkBtn {
+        width: 100%;
+        /* Full width in stacked layout */
+    }
+}
+
+/* --- Blacklist Confirm Modal --- */
+.confirm-modal-content-v3 {
+    max-width: 400px;
+    padding: 30px 25px;
+}
+
+.confirm-modal-content-v3 h3 {
+    color: var(--v3-primary-color);
+}
+
+.confirm-modal-content-v3 p {
+    margin: 15px 0 25px;
+    font-size: 1rem;
+    color: var(--v3-text-color);
+    line-height: 1.6;
+}
+
+.confirm-actions-v3 {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.confirm-actions-v3 .btn-v3 {
+    min-width: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

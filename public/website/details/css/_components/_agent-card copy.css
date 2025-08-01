@@ -1,0 +1,64 @@
+/* _components/_agent-card.css */
+.agent-contact-card-v3 h4 {
+    text-align: center;
+    color: var(--v3-primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+}
+
+.agent-info-v3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.agent-avatar-v3 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 12px;
+    object-fit: cover;
+    border: 2px solid var(--v3-border-color);
+}
+
+.agent-info-v3 h5 {
+    margin-bottom: 2px;
+    font-size: 1rem;
+}
+
+.agent-status-v3 {
+    font-size: 0.8rem;
+    color: var(--v3-text-light);
+}
+
+#contactAgentFormV3 input,
+/* Could also go into _forms.css */
+#contactAgentFormV3 textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--v3-border-color);
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+#contactAgentFormV3 input:focus,
+#contactAgentFormV3 textarea:focus {
+    outline: none;
+    border-color: var(--v3-primary-color);
+}
+
+#contactAgentFormV3 textarea {
+    resize: vertical;
+}
+
+.agent-action-buttons-v3 {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.agent-action-buttons-v3 .btn-v3 {
+    flex-grow: 1;
+}

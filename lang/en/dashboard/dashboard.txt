@@ -1,0 +1,79 @@
+<?php
+
+return [
+    //======================================================================
+    // General & Dashboard Page
+    //======================================================================
+    'dashboard'                 => 'Dashboard',
+    'view_all'                  => 'View All',
+    'no_data_to_display'        => 'No data to display',
+    'active'                    => 'Active',
+    'inactive'                  => 'Inactive',
+
+    'trend_total_properties'    => 'Available Property',
+    'trend_unread_messages'     => 'Requires Response',
+    'trend_today_appointments'  => 'Important Appointment',
+    'total_users'               => 'Total Users',
+    'trend_total_users'         => 'User',
+    'trend_pending_reports'     => 'Requires Action',
+
+    // --- Stat Cards ---
+    'total_properties'          => 'Total Properties',
+    'monthly_sales'             => 'Monthly Sales',
+    'pending_reports'           => 'Open Reports',
+    'unread_messages'           => 'Unread Messages',
+    'today_appointments'        => 'Today\'s Appointments',
+    'trend_property_available'  => 'Property Available',
+    'trend_successful_deal'     => 'Successful Deal',
+    'trend_action_required'     => 'Action Required',
+    'trend_reply_required'      => 'Reply Required',
+    'trend_important'           => 'Important Appointment',
+
+    // --- Main Content Tables ---
+    'latest_properties'         => 'Latest Properties',
+    'property'                  => 'Property',
+    'price'                     => 'Price',
+    'status'                    => 'Status',
+    'no_recent_properties'      => 'No recent properties',
+
+    'latest_reports'            => 'Latest Reports',
+    'subject'                   => 'Subject',
+    'on_property'               => 'On:',
+    'by'                        => 'By',
+    'no_recent_reports'         => 'No recent reports',
+
+    // --- Sidebar ---
+    'upcoming_appointments'     => 'Upcoming Appointments',
+    'with_client'               => 'With:',
+    'no_upcoming_appointments'  => 'No upcoming appointments',
+    'property_types'            => 'Property Types',
+    'report_statuses'           => 'Report Statuses',
+
+    //======================================================================
+    // Modals (Dialogs)
+    //======================================================================
+    'report_details'            => 'Report Details',
+    'related_property'          => 'Property Related to the Report',
+    'open_property_page'        => 'Open Property Page',
+    'report_subject'            => 'Report Subject',
+    'report_description'        => 'Report Description', // For the report itself
+    'property_description'      => 'Property Description', // For the property
+    'take_action'               => 'Take Action',
+    'save_changes'              => 'Save Changes',
+    'cancel'                    => 'Cancel',
+
+    'appointment_details'       => 'Appointment Details',
+    'title'                     => 'Title',
+    'client'                    => 'Client',
+    'datetime'                  => 'Date & Time',
+    'notes'                     => 'Notes',
+    'edit'                      => 'Edit',
+
+    //======================================================================
+    // Common Terms (for statuses, etc.)
+    //======================================================================
+    'pending'                   => 'Pending',
+    'resolved'                  => 'Resolved',
+    'dismissed'                 => 'Dismissed',
+    'in_progress'               => 'In Progress',
+];

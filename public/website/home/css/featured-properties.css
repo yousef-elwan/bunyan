@@ -1,0 +1,278 @@
+/* --- Featured Properties Section Styles (SwiperJS) --- */
+.featured-properties-section {
+    /* padding: 40px 0 50px;  */
+    /* padding: 40px 0 50px;  */
+    padding-top: 20px; 
+    background-color: #f9f9f9;
+}
+.featured-properties-section:last-child{
+    padding-bottom: 20px;
+}
+
+.featured-properties-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.featured-properties-section .section-header .section-title {
+    margin-bottom: 0;
+    text-align: right;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.view-all-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+.view-all-link i {
+    margin-right: 3px;
+    font-size: 0.7em;
+}
+.view-all-link:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+/* OLD DESIGN PROPERTY CARD STYLES */
+.old-design-property-card {
+    background-color: var(--white-color);
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* For consistent height in Swiper slides */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    width: 100%; /* Ensure card fills swiper-slide */
+    box-sizing: border-box;
+}
+
+.odpc-image-wrapper {
+    position: relative;
+    height: 180px; /* Or desired fixed height */
+}
+.odpc-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.odpc-status-tag {
+    position: absolute;
+    top: 12px; /* Adjusted position */
+    right: 12px;
+    color: var(--white-color);
+    padding: 5px 12px; /* Slightly more padding */
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1; /* Ensure consistent height */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Subtle shadow for tag */
+}
+.odpc-tag-rent { background-color: #6c757d; }
+.odpc-tag-buy { background-color: #28a745; }
+.odpc-tag-mortgage { background-color: #dc3545; }
+
+.odpc-content {
+    padding: 15px; /* Consistent padding */
+    flex-grow: 1; /* Allows content to expand and push footer down */
+    display: flex;
+    flex-direction: column;
+}
+
+.odpc-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px; /* Reduced margin */
+    line-height: 1.4;
+    /* Truncate title to one line */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.odpc-title a {
+    color: inherit;
+}
+.odpc-title a:hover {
+    color: var(--primary-color);
+}
+
+.odpc-id {
+    font-size: 0.75rem;
+    color: #999;
+    margin-bottom: 10px; /* Increased margin */
+}
+
+.odpc-description {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 12px; /* Increased margin */
+    height: 45px; /* Approx 3 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.odpc-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: auto; /* Pushes meta to bottom of content before footer */
+    padding-top: 10px; /* Space above meta if description is short */
+}
+.odpc-meta i {
+    margin-left: 4px;
+    color: #aaa;
+    font-size: 0.9em;
+}
+.odpc-area {
+    direction: ltr;
+    text-align: left;
+}
+.odpc-area i {
+    margin-right: 4px;
+    margin-left: 0;
+}
+
+.odpc-footer {
+    padding: 12px 15px; /* Consistent padding */
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdfdfd;
+}
+
+.odpc-price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.odpc-details-link {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 500;
+    padding: 5px 10px; /* Adjusted padding */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.odpc-details-link:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Swiper Styles for Properties Carousel */
+.swiper-slide { /* Ensure slides allow content to stretch to full height */
+    height: auto;
+    display: flex; /* Helps card inside to take full height if needed */
+}
+.properties-swiper {
+    padding-bottom: 45px; /* More space for pagination */
+    position: relative;
+}
+
+/* Custom Swiper Navigation Buttons */
+.properties-swiper .swiper-button-prev,
+.properties-swiper .swiper-button-next {
+    color: #555;
+    width: 38px; /* Slightly smaller */
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    top: 50%;
+    /* Adjust transform to correctly center and position above pagination */
+    transform: translateY(calc(-50% - 22px)); /* 22px is half of pagination height + gap */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.properties-swiper .swiper-button-prev::after, /* Swiper uses ::after for default icons */
+.properties-swiper .swiper-button-next::after {
+    font-size: 0.9rem; /* Icon size inside button */
+}
+.properties-swiper .swiper-button-prev:hover,
+.properties-swiper .swiper-button-next:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+/* Position for RTL */
+.properties-swiper .swiper-button-prev { right: 15px; left: auto; }
+.properties-swiper .swiper-button-next { left: 15px; right: auto; }
+
+
+/* Custom Swiper Pagination Dots */
+.properties-swiper-pagination { /* Target specific pagination */
+    bottom: 10px !important; /* Position dots lower */
+    position: absolute; /* Ensure it's absolutely positioned */
+    width: 100%;
+    left: 0;
+}
+.properties-swiper .swiper-pagination-bullet {
+    background: #cccccc; /* Lighter inactive dot */
+    opacity: 1;
+    width: 9px;
+    height: 9px;
+    margin: 0 4px !important; /* Adjust spacing */
+    transition: background-color 0.3s ease;
+}
+.properties-swiper .swiper-pagination-bullet-active {
+    background: var(--primary-color);
+}
+
+/* Responsive Adjustments for Swiper Properties Carousel */
+@media (max-width: 992px) {
+    .properties-swiper .swiper-button-prev,
+    .properties-swiper .swiper-button-next {
+        display: none;
+    }
+    .odpc-image-wrapper { height: 160px; }
+    .odpc-title { font-size: 0.9rem; }
+    .odpc-description { height: 40px; -webkit-line-clamp: 2; }
+    .odpc-meta { font-size: 0.75rem; }
+    .odpc-price { font-size: 0.95rem; }
+    .odpc-details-link { font-size: 0.8rem; padding: 4px 8px;}
+}
+
+@media (max-width: 768px) {
+    .featured-properties-section .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .featured-properties-section .section-header .section-title {
+         text-align: right;
+    }
+}
+@media (max-width: 480px) {
+    .odpc-image-wrapper { height: 170px; } /* Slightly taller image on smallest screens if only 1 card shown */
+    .odpc-content { padding: 12px; }
+    .odpc-title { font-size: 0.9rem; }
+    .odpc-description {
+         /* Optionally hide or further reduce line clamp for very small screens */
+        height: 2.8em; /* Approx 2 lines */
+        -webkit-line-clamp: 2;
+    }
+    .odpc-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        font-size: 0.75rem;
+        padding-top: 5px;
+    }
+     .odpc-footer { padding: 10px 12px; }
+     .odpc-price { font-size: 0.9rem; }
+}

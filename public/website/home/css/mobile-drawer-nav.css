@@ -1,0 +1,262 @@
+/* ==========================================================================
+   Mobile Drawer Navigation Styles
+   ========================================================================== */
+
+/* Basic Drawer Structure & Appearance */
+.mobile-drawer-nav {
+    position: fixed;
+    top: 0;
+
+    /* Start off-screen for LTR */
+    width: 280px;
+    max-width: 85vw;
+    height: 100%;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+}
+
+[dir="ltr"] .mobile-drawer-nav {
+    /* right: auto; */
+    /* left: -300px; */
+    left: -300px;
+}
+
+[dir="rtl"] .mobile-drawer-nav {
+    /* left: auto; */
+    right: -300px;
+}
+
+html[dir="ltr"].drawer-open .mobile-drawer-nav {
+    transform: translateX(300px);
+}
+
+html[dir="rtl"].drawer-open .mobile-drawer-nav {
+    transform: translateX(-300px);
+}
+
+/* Drawer Header */
+.mobile-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #34495e;
+    border-bottom: 1px solid #46627f;
+}
+
+.mobile-drawer-header .sidebar-logo-container .app-logo-img-drawer {
+    max-height: 30px;
+    width: auto;
+}
+
+.mobile-drawer-header .btn-close-drawer-main {
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-drawer-header .btn-close-drawer-main:hover {
+    color: #bdc3c7;
+}
+
+/* Main Navigation Area in Drawer */
+.main-nav-drawer {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.mobile-drawer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Main Menu Items (.drawer-main-menu) */
+.mobile-drawer-nav .drawer-main-menu li a,
+.mobile-drawer-nav .drawer-main-menu li .link {
+    display: block;
+    padding: 12px 20px;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-bottom: 1px solid #3e5771;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-drawer-nav .drawer-main-menu li:last-child a,
+.mobile-drawer-nav .drawer-main-menu li:last-child .link {
+    border-bottom: none;
+}
+
+.mobile-drawer-nav .drawer-main-menu li a:hover,
+.mobile-drawer-nav .drawer-main-menu li .link:hover {
+    background-color: #34495e;
+    color: #ffffff;
+}
+
+.mobile-drawer-nav .drawer-main-menu li a.active-header-link {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header.drawer-submenu-open>a.active-header-link,
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header>a.active-header-link,
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header.drawer-submenu-open>.link.active-header-link,
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header>.link.active-header-link {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header>a,
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header>.link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* DRAWER Submenu Styling - using .drawer-submenu-list */
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list {
+    background-color: #22303f;
+    display: none;
+    /* CRITICAL: Hidden by default */
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list li a,
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list li .link {
+    padding-left: 35px;
+    font-size: 0.9em;
+    color: #bdc3c7;
+    border-bottom: 1px solid #2c3e50;
+}
+
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list li:last-child a,
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list li:last-child .link {
+    border-bottom: none;
+}
+
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list li a:hover,
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list li .link:hover {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+/* DRAWER Nested Submenu Styling - using .nested-drawer-submenu */
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list .nested-drawer-submenu li a,
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list .nested-drawer-submenu li .link {
+    /* Targets UL with .nested-drawer-submenu */
+    padding-left: 50px;
+    background-color: #1c2833;
+}
+
+/* OR, if nesting is just another .drawer-submenu-list inside a .drawer-submenu-list:
+.mobile-drawer-nav .drawer-main-menu .drawer-submenu-list .drawer-submenu-list li a {
+    padding-left: 50px;
+    background-color: #1c2833;
+}
+*/
+
+/* Show DRAWER Submenu when parent LI has .drawer-submenu-open */
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header.drawer-submenu-open>.drawer-submenu-list {
+    display: block !important;
+    /* Keep !important for testing. Remove if not needed after fix. */
+}
+
+/* Chevron Icons in Drawer Menu */
+.mobile-drawer-nav .drawer-main-menu .nav-submenu-chevron {
+    transition: transform 0.3s ease-in-out;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+[dir="rtl"] .mobile-drawer-nav .drawer-main-menu .nav-submenu-chevron {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header.drawer-submenu-open>a .nav-submenu-chevron:not(.nested-chevron),
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header.drawer-submenu-open>.link .nav-submenu-chevron:not(.nested-chevron) {
+    transform: rotate(180deg);
+}
+
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header.drawer-submenu-open>a .nav-submenu-chevron.nested-chevron,
+.mobile-drawer-nav .drawer-main-menu li.has-submenu-header.drawer-submenu-open>.link .nav-submenu-chevron.nested-chevron {
+    transform: rotate(90deg);
+}
+
+/* Drawer Navigation Divider */
+#mainNavDrawerContent .drawer-nav-divider {
+    height: 1px;
+    background-color: #4a6581;
+    margin: 15px 20px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Static Links Styling (.drawer-static-links) */
+.mobile-drawer-nav .drawer-static-links li a,
+.mobile-drawer-nav .drawer-static-links li .link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #bdc3c7;
+    text-decoration: none;
+    border-bottom: 1px solid #3e5771;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-drawer-nav .drawer-static-links li:last-child a,
+.mobile-drawer-nav .drawer-static-links li:last-child .link {
+    border-bottom: none;
+}
+
+.mobile-drawer-nav .drawer-static-links li a:hover,
+.mobile-drawer-nav .drawer-static-links li .link:hover {
+    background-color: #34495e;
+    color: #ffffff;
+}
+
+.mobile-drawer-nav .drawer-static-links li a i,
+.mobile-drawer-nav .drawer-static-links li .link i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+[dir="rtl"] .mobile-drawer-nav .drawer-static-links li a i,
+[dir="rtl"] .mobile-drawer-nav .drawer-static-links li .link i {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+/* Drawer Backdrop */
+.drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s linear;
+}
+
+html.drawer-open .drawer-backdrop {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0s linear;
+}

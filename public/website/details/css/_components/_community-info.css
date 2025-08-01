@@ -1,0 +1,684 @@
+/* css/_components/_community-info.css */
+
+.community-info-v3 {
+    /* Uses .card-v3 styles by default, assuming .card-v3 is defined elsewhere (e.g., _cards.css) */
+}
+
+.community-info-v3 h2 {
+    font-size: 1.5rem;
+    color: var(--v3-primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--v3-border-color);
+    display: block;
+}
+
+/* Styles for direct children sections within .community-info-v3, like .faq-section-v3, .rating-summary-section-v3 */
+.community-info-v3>.faq-section-v3,
+.community-info-v3>.rating-summary-section-v3,
+.community-info-v3>.comments-section-v3 {
+    /* Added comments-section-v3 if it's a direct child */
+    /* This rule might be too broad if .community-info-v3 wraps multiple .card-v3 itself.
+       Adjust selector if needed. The original HTML had multiple <section class="community-info-v3 card-v3">.
+       If each is a separate card, this rule might not be needed here or should be more specific.
+       Assuming for now .faq-section-v3, .rating-summary-section-v3 are direct children of ONE .community-info-v3 card.
+    */
+}
+
+.community-info-v3>div:not(:last-child),
+/* General spacing for direct div children */
+.community-info-v3>section:not(:last-child) {
+    /* Spacing for direct section children */
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed var(--v3-border-color);
+}
+
+.community-info-v3>div:last-child,
+.community-info-v3>section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+
+/* --- RATING SECTION --- */
+.rating-summary-section-v3 {
+    /* Contains both overview and breakdown */
+}
+
+.rating-overview-v3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Was 30px, then 20px from embedded, choose one or adjust */
+    align-items: flex-start;
+    margin-bottom: 25px;
+    /* Was 20px, then 25px from embedded */
+}
+
+.average-rating-v3 {
+    flex: 1;
+    min-width: 180px;
+    /* Was 200px, then 180px from embedded */
+    text-align: center;
+}
+
+.average-stars-v3 {
+    /* ID for the number like "4.7" */
+    font-size: 2.5rem;
+    /* Was 2.8rem, then 2.5rem from embedded */
+    font-weight: 700;
+    color: var(--v3-text-color);
+    display: block;
+    margin-bottom: 3px;
+    /* Was 5px, then 3px from embedded */
+}
+
+.stars-display-v3 {
+    /* General class for displaying stars (average, individual review) */
+    font-size: 1.1rem;
+    /* Was 1.2rem, then 1.1rem from embedded */
+    color: var(--v3-accent-color);
+    margin-bottom: 6px;
+    /* Was 8px, then 6px from embedded */
+}
+
+.stars-display-v3 i.far {
+    /* Empty star in any stars display */
+    color: #d1d5db;
+    /* Was #ccc, then #d1d5db from embedded */
+}
+
+.average-rating-v3 p {
+    font-size: 0.85rem;
+    /* Was 0.9rem, then 0.85rem from embedded */
+    color: var(--v3-text-light);
+    margin-top: 3px;
+    /* Was 5px, then 3px from embedded */
+}
+
+.rating-breakdown-v3 {
+    flex: 2;
+    min-width: 250px;
+    /* Was 280px, then 250px from embedded */
+}
+
+.rating-bar-row-v3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    /* Was 8px, then 6px from embedded */
+    font-size: 0.8rem;
+    /* Was 0.85rem, then 0.8rem from embedded */
+}
+
+.rating-bar-row-v3 span:first-child {
+    /* "5 نجوم" */
+    width: auto;
+    /* Allow text to define width */
+    min-width: 65px;
+    /* Ensure enough space for typical text */
+    color: var(--v3-text-light);
+    flex-shrink: 0;
+}
+
+.rating-bar-v3 {
+    flex-grow: 1;
+    height: 8px;
+    /* Was 10px, then 8px from embedded */
+    background-color: #e9ecef;
+    border-radius: 4px;
+    /* Was 5px, then 4px from embedded */
+    overflow: hidden;
+    margin: 0 8px;
+    /* Was 10px, then 8px from embedded */
+}
+
+.rating-bar-filled-v3 {
+    height: 100%;
+    background-color: var(--v3-accent-color);
+    border-radius: 4px;
+    /* Was 5px, then 4px from embedded */
+    transition: width 0.5s ease-in-out;
+}
+
+.rating-bar-row-v3 span:last-child {
+    /* "(10)" */
+    width: 35px;
+    /* Wider to accommodate larger counts if needed */
+    color: var(--v3-text-light);
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.btn-add-review-v3 {
+    /* Button to toggle the main comment/review form */
+    display: block;
+    margin: 20px auto 0 auto;
+    /* Was 15px in original, 20px in embedded */
+}
+
+
+/* --- COMMENTS SECTION --- */
+.comments-section-v3 {
+    /* Contains list and potentially the "Add Comment" button/form if not globally placed */
+}
+
+.comment-list-v3 {
+    margin-bottom: 20px;
+    /* From embedded */
+}
+
+.comment-item-v3 {
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    /* For reply form positioning or other absolute elements */
+}
+
+.comment-list-v3>.comment-item-v3:last-child,
+.comment-replies-container-v3>.comment-item-v3:last-child {
+    /* From embedded */
+    border-bottom: none;
+    padding-bottom: 5px;
+}
+
+.comment-author-v3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    /* Was 10px, then 8px from embedded */
+}
+
+.comment-avatar-v3 {
+    width: 36px;
+    /* Consistent with embedded example, original was 40px */
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    /* From embedded */
+}
+
+[dir="rtl"] .comment-avatar-v3 {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+/* Was 12px, then 10px */
+[dir="ltr"] .comment-avatar-v3 {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+
+.comment-author-name-v3 {
+    font-weight: 600;
+    color: var(--v3-text-color);
+    display: block;
+    margin-bottom: 2px;
+    font-size: 0.95rem;
+    /* From embedded */
+}
+
+.comment-author-rating-v3.stars-display-v3 {
+    /* Stars within a single comment */
+    font-size: 0.85rem;
+    /* Was 0.9rem, then 0.85rem from embedded */
+    margin-bottom: 0;
+}
+
+.comment-text-v3 {
+    font-size: 0.9rem;
+    /* Was 0.95rem, then 0.9rem from embedded */
+    color: var(--v3-text-light);
+    line-height: 1.6;
+    /* Was 1.7, then 1.6 from embedded */
+    margin-bottom: 8px;
+    /* Was 10px, then 8px from embedded */
+    text-align: right;
+    white-space: pre-wrap;
+    /* From embedded */
+    word-break: break-word;
+    /* From embedded */
+}
+
+.comment-meta-v3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    /* Was 0.8rem, then 0.75rem from embedded */
+    color: #aaa;
+    /* Was #999, then #aaa from embedded */
+}
+
+.comment-actions-group {
+    /* From embedded */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.comment-action-btn-v3 {
+    /* For "Reply", "View Replies" etc. */
+    background: none;
+    border: none;
+    color: var(--v3-primary-color);
+    cursor: pointer;
+    padding: 3px;
+    /* Was 5px, then 3px from embedded */
+    font-size: 0.8rem;
+    /* Was 0.85rem, then 0.8rem from embedded */
+    font-weight: 500;
+    display: inline-flex;
+    /* From embedded */
+    align-items: center;
+    /* From embedded */
+    position: relative;
+    /* For loading spinner */
+    min-height: 24px;
+    /* From embedded */
+}
+
+.comment-action-btn-v3 i:not(.loading-spinner-v3):not(.fa-comments):not(.fa-comment-slash) {
+    /* For reply icon */
+    /* margin-left was 4px, then 3px in embedded */
+}
+
+[dir="rtl"] .comment-action-btn-v3 i:not(.loading-spinner-v3):not(.fa-comments):not(.fa-comment-slash) {
+    margin-left: 0;
+    margin-right: 3px;
+}
+
+[dir="ltr"] .comment-action-btn-v3 i:not(.loading-spinner-v3):not(.fa-comments):not(.fa-comment-slash) {
+    margin-left: 3px;
+    margin-right: 0;
+}
+
+
+.comment-action-btn-v3:hover {
+    text-decoration: underline;
+}
+
+.btn-view-replies {
+    /* Specific styling for "View Replies" button */
+    color: var(--v3-text-light);
+    font-size: 0.75rem;
+    /* From embedded */
+}
+
+.btn-view-replies i:not(.loading-spinner-v3) {
+    /* Icon within view replies button */
+    font-size: 0.9em;
+    /* From embedded */
+}
+
+[dir="rtl"] .btn-view-replies i:not(.loading-spinner-v3) {
+    margin-left: 4px;
+    margin-right: 0;
+}
+
+/* From embedded */
+[dir="ltr"] .btn-view-replies i:not(.loading-spinner-v3) {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+/* From embedded */
+
+.btn-view-replies.replies-shown {
+    /* When replies are visible */
+    color: var(--v3-primary-color);
+    /* From embedded */
+}
+
+
+/* Styling for indented replies - From embedded */
+.comment-replies-container-v3 {
+    margin-top: 10px;
+}
+
+.comment-item-v3[style*="margin-right: 25px"] .comment-avatar-v3,
+.comment-item-v3[style*="margin-left: 25px"] .comment-avatar-v3 {
+    width: 32px;
+    height: 32px;
+}
+
+.comment-item-v3[style*="margin-right: 25px"] .comment-author-name-v3,
+.comment-item-v3[style*="margin-left: 25px"] .comment-author-name-v3 {
+    font-size: 0.9rem;
+}
+
+.comment-item-v3[style*="margin-right: 25px"] .comment-text-v3,
+.comment-item-v3[style*="margin-left: 25px"] .comment-text-v3 {
+    font-size: 0.85rem;
+}
+
+.comment-item-v3[style*="margin-right: 50px"] .comment-avatar-v3,
+.comment-item-v3[style*="margin-left: 50px"] .comment-avatar-v3 {
+    width: 28px;
+    height: 28px;
+}
+
+.comment-item-v3[style*="margin-right: 50px"] .comment-author-name-v3,
+.comment-item-v3[style*="margin-left: 50px"] .comment-author-name-v3 {
+    font-size: 0.85rem;
+}
+
+.comment-item-v3[style*="margin-right: 50px"] .comment-text-v3,
+.comment-item-v3[style*="margin-left: 50px"] .comment-text-v3 {
+    font-size: 0.8rem;
+}
+
+/* Reply Form specific styles - From embedded */
+.reply-form-container-v3 {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: var(--v3-border-radius);
+    border: 1px solid #eee;
+}
+
+.add-reply-form-v3 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.add-reply-form-v3 .reply-form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+[dir="rtl"] .add-reply-form-v3 .reply-form-actions {
+    justify-content: flex-end;
+}
+
+.add-reply-form-v3 .btn-cancel-reply {
+    color: var(--v3-text-light);
+}
+
+
+/* Main Add Comment/Review Form */
+.add-comment-form-v3 {
+    margin-top: 25px;
+    padding: 25px 20px; /* Increased top/bottom padding slightly */
+    border: 1px solid var(--v3-border-color);
+    border-radius: var(--v3-border-radius);
+    background-color: #f9fafb;
+    display: none; /* JS handles .active class */
+}
+.add-comment-form-v3.active {
+    display: block;
+    animation: fadeInFormV3 0.3s ease;
+}
+@keyframes fadeInFormV3 {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.add-comment-form-v3 h4 { /* Title: "إضافة تعليق أو تقييم" */
+    font-size: 1.25rem; /* Slightly larger title */
+    color: var(--v3-text-color);
+    margin-top: 0;
+    margin-bottom: 30px; /* More space below title */
+    text-align: center;   /* Center the title */
+}
+
+.add-comment-form-v3 .form-group-v3 {
+    margin-bottom: 20px; /* Consistent spacing for form groups */
+    text-align: right;
+}
+
+.add-comment-form-v3 .form-group-v3 label {
+    display: block;
+    margin-bottom: 8px; /* Slightly more space below label */
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--v3-text-color);
+    /* From embedded */
+}
+
+/* Textarea in add-comment-form-v3 and add-reply-form-v3 */
+.add-comment-form-v3 textarea,
+.add-comment-form-v3 input,
+/* Combined with styles from embedded */
+.add-reply-form-v3 textarea {
+    width: 100%;
+    padding: 10px 12px;
+    /* From embedded input-v3 */
+    border: 1px solid var(--v3-border-color);
+    border-radius: var(--v3-border-radius);
+    font-family: inherit;
+    /* Use var(--v3-font-family) if defined */
+    font-size: 0.95rem;
+    /* From embedded input-v3 */
+    box-sizing: border-box;
+    line-height: 1.5;
+    /* From embedded input-v3 */
+    background-color: var(--v3-card-bg);
+    /* From embedded input-v3 */
+    color: var(--v3-text-color);
+    /* From embedded input-v3 */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    /* From embedded input-v3 */
+    resize: vertical;
+    min-height: 80px;
+}
+.add-comment-form-v3 input{
+     min-height: unset;
+}
+.add-comment-form-v3 textarea::placeholder,
+/* From embedded input-v3 */
+.add-reply-form-v3 textarea::placeholder {
+    color: var(--v3-text-light);
+    opacity: 0.8;
+}
+
+.add-comment-form-v3 textarea:focus,
+/* Combined with styles from embedded */
+.add-reply-form-v3 textarea:focus {
+    outline: none;
+    border-color: var(--v3-primary-color);
+    box-shadow: 0 0 0 3px rgba(var(--v3-primary-color-rgb), 0.15);
+    /* Was 0.2rem & 0.25 opacity */
+}
+
+/* Star rating input for the main form */
+.your-rating-v3 .star-rating-input-v3 {
+    display: flex;
+    direction: ltr;
+    justify-content: flex-end;
+    font-size: 1.6rem;
+    /* Was 1.5rem, then 1.6rem from embedded */
+}
+
+[dir="rtl"] .your-rating-v3 .star-rating-input-v3 {
+    justify-content: flex-end;
+}
+
+.your-rating-v3 .star-rating-input-v3 i {
+    color: #e0e0e0;
+    /* Was #ccc, then #e0e0e0 from embedded */
+    cursor: pointer;
+    padding: 0 3px;
+    transition: color 0.2s, transform 0.1s;
+}
+
+.your-rating-v3 .star-rating-input-v3 i:hover,
+.your-rating-v3 .star-rating-input-v3 i.selected,
+.your-rating-v3 .star-rating-input-v3 i.hovered {
+    color: var(--v3-accent-color);
+    transform: scale(1.15);
+    /* Was 1.1, then 1.15 from embedded */
+}
+
+.load-more-comments-v3 {
+    display: block;
+    margin: 20px auto 0 auto;
+}
+
+.no-more-comments-v3 {
+    /* From embedded */
+    text-align: center;
+    color: var(--v3-text-light);
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+
+/* --- FAQ SECTION --- */
+.faq-section-v3 {
+    /* Contains the list of FAQ items */
+}
+
+.faq-list-v3 {
+    /* Container for FAQ items */
+}
+
+.faq-item-v3 {
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.faq-item-v3:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.faq-question-v3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 5px;
+    /* Adjusted from 15px 0, using embedded value */
+    background: none;
+    border: none;
+    text-align: right;
+    cursor: pointer;
+    font-family: inherit;
+    /* Use var(--v3-font-family) if defined */
+}
+
+.faq-question-v3 span {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--v3-text-color);
+}
+
+.faq-question-v3 i {
+    /* Chevron icon */
+    font-size: 0.9rem;
+    color: var(--v3-text-light);
+    transition: transform 0.3s ease;
+    /* margin-right/left handled by dir attribute selectors below */
+}
+
+[dir="rtl"] .faq-question-v3 i {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+[dir="ltr"] .faq-question-v3 i {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+
+.faq-item-v3.active .faq-question-v3 i {
+    transform: rotate(180deg);
+}
+
+.faq-answer-v3 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out, padding 0.35s ease-out;
+    padding: 0 5px;
+    text-align: right;
+}
+
+.faq-item-v3.active .faq-answer-v3 {
+    /* max-height is set by JS using scrollHeight */
+    padding: 5px 5px 15px 5px;
+}
+
+.faq-answer-v3 p {
+    font-size: 0.95rem;
+    color: var(--v3-text-light);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* --- Loading Spinner Specific Styles (if not globally defined) --- */
+/* These were within the embedded style block, good to have them if not covered elsewhere */
+.loading-spinner-v3 {
+    display: inline-block;
+    font-size: 1.1em;
+    color: inherit;
+    animation: spinV3 1s linear infinite;
+}
+
+@keyframes spinV3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-v3.loading>*:not(.loading-spinner-container),
+.comment-action-btn-v3.loading>*:not(.loading-spinner-container) {
+    visibility: hidden;
+}
+
+.loading-spinner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+#initialCommentLoadingMessageV3 .loading-spinner-container {
+    position: static;
+    display: inline-flex;
+}
+
+[dir="rtl"] #initialCommentLoadingMessageV3 .loading-spinner-container {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+[dir="ltr"] #initialCommentLoadingMessageV3 .loading-spinner-container {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+
+.btn-v3-primary .loading-spinner-v3,
+.btn-v3-outline.loading .loading-spinner-v3 {
+    color: #fff;
+}
+
+.btn-v3-outline.loading:not(:hover) .loading-spinner-v3 {
+    color: var(--v3-primary-color);
+}
+
+.btn-v3-link .loading-spinner-v3,
+.comment-action-btn-v3.loading .loading-spinner-v3 {
+    color: var(--v3-primary-color);
+}
+
+.btn-view-replies.loading .loading-spinner-v3 {
+    color: var(--v3-text-light);
+}

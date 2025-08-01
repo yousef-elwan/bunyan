@@ -1,0 +1,29 @@
+/* _layout.css */
+.container-v3 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.property-layout-v3 {
+    display: flex;
+    gap: 25px;
+}
+
+.main-details-column-v3 {
+    flex: 2.5;
+    min-width: 0;
+}
+
+.sidebar-v3 {
+    flex: 1;
+    min-width: 280px;
+}
+
+.sticky-sidebar-v3 {
+    position: sticky;
+    top: 80px;
+    /* max-height: calc(100vh - 80px); */
+    /* overflow-y: auto; */
+}

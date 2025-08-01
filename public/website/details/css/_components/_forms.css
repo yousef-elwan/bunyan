@@ -1,0 +1,149 @@
+/* _components/_forms.css */
+.form-group-v3 {
+    margin-bottom: 15px;
+}
+
+.form-group-v3 label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group-v3 select,
+.form-group-v3 textarea, 
+.form-group-v3 input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--v3-border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: var(--v3-font-family);
+}
+
+/* Styles for intl-tel-input */
+#contactAgentFormV3 .iti {
+    /* Target ITI instance within this specific form */
+    width: 100%;
+    direction: ltr;
+    /* Important: ITI itself is LTR for flags and dropdown */
+}
+
+#contactAgentFormV3 .iti__tel-input {
+    /* The actual phone input field */
+    width: 100% !important;
+    /* Override ITI's inline width if necessary */
+    padding: 10px 12px !important;
+    /* Match your other inputs */
+    padding-right: 56px !important;
+    /* Space for the flag dropdown - LTR default */
+    border: 1px solid var(--v3-border-color) !important;
+    border-radius: 6px !important;
+    /* Match your other inputs */
+    font-size: 0.9rem !important;
+    box-sizing: border-box !important;
+    font-family: var(--v3-font-family) !important;
+    height: auto !important;
+    /* Let padding define height */
+    line-height: 1.5;
+    /* Adjust for vertical alignment */
+    direction: ltr !important;
+    /* Keep phone number input LTR */
+    text-align: left !important;
+}
+
+[dir="rtl"] #contactAgentFormV3 .iti__tel-input {
+    /* RTL specific padding for flag */
+    padding-left: 56px !important;
+    padding-right: 12px !important;
+    text-align: right !important;
+    /* Number aligns right in RTL */
+}
+
+
+#contactAgentFormV3 .iti__flag-container {
+    /* Adjustments if needed, usually ITI handles this well */
+}
+
+#contactAgentFormV3 .iti__selected-flag {
+    outline: none;
+    /* padding: 0 8px 0 10px; */
+    /* Adjust padding for flag */
+}
+
+[dir="rtl"] #contactAgentFormV3 .iti__selected-flag {
+    /* padding: 0 10px 0 8px; */
+}
+
+
+#contactAgentFormV3 .iti__country-list {
+    border-radius: 6px;
+    border: 1px solid var(--v3-border-color);
+    box-shadow: var(--v3-shadow);
+    max-height: 200px;
+    /* Limit dropdown height */
+    z-index: 1002;
+    /* Ensure it's above modal overlay if used in modal */
+    text-align: left;
+    /* Country names are usually LTR */
+}
+
+#contactAgentFormV3 .iti__country {
+    padding: 8px 12px;
+}
+
+#contactAgentFormV3 .iti__country:hover,
+#contactAgentFormV3 .iti__highlight {
+    background-color: var(--v3-primary-color) !important;
+    color: white !important;
+}
+
+#contactAgentFormV3 .iti__dial-code {
+    color: var(--v3-text-light);
+}
+
+#contactAgentFormV3 .iti__highlight .iti__dial-code {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Focus state for the input field */
+#contactAgentFormV3 .iti--allow-dropdown.iti--separate-dial-code .iti__tel-input:focus,
+#contactAgentFormV3 input[type="tel"]:focus {
+    /* Also target base tel input if ITI fails to load */
+    outline: none;
+    border-color: var(--v3-primary-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(var(--v3-primary-color-rgb, 0, 98, 204), 0.25);
+    /* Use RGB var if available */
+}
+
+/* Placeholder styling if using utils.js and getNationalNumberFormat */
+#contactAgentFormV3 .iti__tel-input::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+/* Error state (if you add validation) */
+#contactAgentFormV3 .iti__tel-input.error {
+    border-color: var(--v3-danger-color) !important;
+}
+
+/* Ensure form group spacing for the new input */
+#contactAgentFormV3 #agentContactPhoneV3 {
+    margin-bottom: 0;
+    /* ITI wrapper handles spacing, remove from input itself */
+}
+
+#contactAgentFormV3 .form-group-v3:has(#agentContactPhoneV3) {
+    margin-bottom: 12px;
+    /* Ensure the wrapper div has margin */
+}
+
+/* Fallback if :has is not supported, apply margin to the .iti wrapper directly or its parent form-group */
+#contactAgentFormV3 .iti {
+    margin-bottom: 12px;
+}
+
+/* Note: Agent contact form inputs are currently in _agent-card.css for specificity
+   but could be generalized and moved here if desired.
+   e.g., input[type="text"], input[type="email"] general styles
+*/

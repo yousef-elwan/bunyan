@@ -1,0 +1,70 @@
+<?php
+
+return [
+    // For Blade UI in the Modal
+    'close_dialog_label' => 'Close Dialog',
+    'login_title' => 'Login',
+    'email_or_phone_placeholder' => 'Email / Mobile Number',
+    'password_placeholder' => 'Password',
+    'forgot_password_link' => 'Forgot Password?',
+    'login_button' => 'Login',
+    'or_divider' => 'Or',
+    'login_with_google_login' => 'Login with Google',
+    'login_with_google_register' => 'Continue with Google',
+    'no_account_prompt' => "Don't have an account?",
+    'create_new_account_link' => 'Create a new account',
+
+    'register_title' => 'Create New Account',
+    'first_name_placeholder' => 'First Name',
+    'last_name_placeholder' => 'Last Name',
+    'email_placeholder' => 'Email Address',
+    'mobile_placeholder' => 'Mobile Number',
+    'confirm_password_placeholder' => 'Confirm Password',
+    'agree_terms_prefix' => 'I agree to the',
+    'privacy_policy_link_text' => 'Privacy Policy',
+    'and_conjunction' => 'and',
+    'terms_of_service_link_text' => 'Terms of Service',
+    'terms_of_use_link_text' => 'Terms of Use',
+    'create_account_button' => 'Create Account',
+    'already_have_account_prompt' => 'Already have an account?',
+    'login_link' => 'Login',
+  
+    // Server-side validation messages
+    'logged_in_successfully' => 'Logged in successfully!',
+    'registration_successful_logged_in' => 'Registration successful! You are now logged in.',
+    'credentials_do_not_match' => 'The provided credentials do not match our records.',
+    'agree_to_terms_required' => 'You must agree to the terms and conditions.',
+    'generic_error_try_again' => 'An unexpected error occurred. Please try again.',
+    'phone_invalid' => 'The phone number is not valid.',
+    'phone_unique' => 'This phone number is already registered.',
+    'email_unique' => 'This email is already registered.',
+    'password_min' => 'The password must be at least :min characters.',
+    'password_confirmed' => 'The password confirmation does not match.',
+    'remember_me' => 'remember me',
+
+    
+    'forgot_password_title' => 'Forgot Password?',
+    'forgot_password_instructions' => 'Enter your email or phone number and we will send you a link to reset your password.',
+    'send_reset_link_button' => 'Send Reset Link',
+    'back_to_login_link' => 'Back to Login',
+    'generate_strong_password' => 'Generate a Strong Password',
+    'generated_password_title' => 'Generated Password',
+    'generated_password_instructions' => 'Copy this password and save it in a safe place. You must confirm you have saved it before you can copy.',
+    'copy_button' => 'Copy',
+    'copied_button' => 'Copied!',
+    'confirm_password_saved' => 'I have saved this password in a safe place.',
+    
+    // Field names for validation attributes
+    'fields' => [
+        'login_identifier' => 'email or phone number',
+        'password' => 'password',
+        'first_name' => 'first name',
+        'last_name' => 'last name',
+        'email' => 'email address',
+        'mobile_raw' => 'mobile number',
+        'mobile' => 'mobile number',
+        'full_phone' => 'mobile number',
+        'password_confirmation' => 'password confirmation',
+        'agreeTerms' => 'terms agreement',
+    ],
+];

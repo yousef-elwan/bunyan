@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'meta_title' => 'شروط الاستخدام',
+    'meta_description' => 'تعرف على الشروط التي تحكم استخدامك لموقعنا وخدماتنا العقارية.',
+    'meta_keywords' => 'شروط الاستخدام, استخدام الموقع, حقوق المستخدم, عقارات',
+    'og_title' => 'شروط الاستخدام',
+    'og_description' => 'تعرف على الشروط التي تحكم استخدامك لموقعنا وخدماتنا العقارية.',
+    'og_image' => 'https://via.placeholder.com/1200x630/607D8B/ffffff?text=Terms+of+Use+Banner',
+    'og_url' => '[رابط_صفحة_شروط_الاستخدام_الفعلي_هنا]',
+    'twitter_card' => 'summary_large_image',
+    'twitter_title' => 'شروط الاستخدام',
+    'twitter_description' => 'تعرف على الشروط التي تحكم استخدامك لموقعنا وخدماتنا العقارية.',
+    'twitter_image' => 'https://via.placeholder.com/1200x600/607D8B/ffffff?text=Terms+of+Use+Banner',
+    'banner_subtitle' => 'الشؤون القانونية',
+    'banner_title' => 'شروط الاستخدام',
+    'sidebar_legal_documents' => 'المستندات القانونية',
+    'sidebar_privacy_policy' => 'سياسة الخصوصية',
+    'sidebar_terms_of_service' => 'شروط الخدمة',
+    'sidebar_contact_us' => 'اتصل بنا',
+    'sidebar_need_help' => 'هل تحتاج إلى مساعدة؟',
+    'sidebar_help_center' => 'توجه إلى مركز المساعدة',
+    'sidebar_email_info' => 'أو تواصل عبر البريد الإلكتروني:',
+    'content_category_label' => 'الشروط العامة لاستخدام الموقع',
+    'last_updated' => 'آخر تحديث: :date',
+];

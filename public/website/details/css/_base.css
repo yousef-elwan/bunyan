@@ -1,0 +1,73 @@
+/* _base.css */
+/* body {
+    font-family: var(--v3-font-family);
+    line-height: 1.65;
+    color: var(--v3-text-color);
+    background-color: var(--v3-bg-color);
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+} */
+/* 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2.1rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+    color: var(--v3-text-color);
+    border-bottom: 2px solid var(--v3-primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: var(--v3-primary-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--v3-text-light);
+}
+*/
+
+
+.text-danger {
+    color: #c72929 !important;
+}
+
+.property-details-page-v3 a {
+    text-decoration: none;
+}
+
+.property-details-page-v3 a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeInTabV3 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.property-details-page-v3 p {
+    margin-bottom: 1rem;
+    /* color: var(--v3-text-light); */
+}

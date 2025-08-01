@@ -1,0 +1,226 @@
+/* public/css/my-modal.css */
+
+/* --- General MyModal Styles --- */
+#myGlobalModal {
+    /* Using a specific ID for the global modal container */
+    display: none;
+    /* Initially hidden */
+    position: fixed;
+    z-index: 1050;
+    /* Ensure it's above most other content, adjust if needed */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scroll if content is too long */
+    background-color: rgba(0, 0, 0, 0.65);
+    /* Semi-transparent backdrop */
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    /* Padding around the modal content area */
+    box-sizing: border-box;
+}
+
+.my-modal-content {
+    background-color: var(--v3-card-bg, #ffffff);
+    /* Use CSS variable or fallback */
+    margin: auto;
+    /* Center horizontally */
+    padding: 25px 30px;
+    /* Inner padding */
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    /* Default max width, can be overridden by JS if needed */
+    border-radius: 12px;
+    /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+    animation: myModalSlideIn 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    text-align: center;
+    /* Default text alignment */
+}
+
+@keyframes myModalSlideIn {
+    from {
+        transform: translateY(-25px) scale(0.97);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.my-modal-close-btn {
+    color: #9ca3af;
+    /* Light gray close icon */
+    position: absolute;
+    top: 15px;
+    font-size: 26px;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 1;
+    padding: 8px;
+    /* Clickable area */
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+    /* Above modal content */
+}
+
+[dir="rtl"] .my-modal-close-btn {
+    left: 15px;
+    right: auto;
+}
+
+[dir="ltr"] .my-modal-close-btn {
+    right: 15px;
+    left: auto;
+}
+
+.my-modal-close-btn:hover {
+    color: var(--v3-danger-color, #dc3545);
+    /* Use CSS variable or fallback */
+    transform: rotate(90deg) scale(1.1);
+}
+
+.my-modal-title {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    /* Space below title */
+    font-weight: 600;
+    font-size: 1.25rem;
+    /* Adjust as needed */
+    color: var(--v3-text-color, #333333);
+    /* Use CSS variable or fallback */
+}
+
+.my-modal-body {
+    margin-bottom: 25px;
+    /* Space below body, before actions */
+    font-size: 1rem;
+    /* Default body text size */
+    line-height: 1.6;
+    color: var(--v3-text-secondary-color, #555555);
+    /* Slightly lighter text for body */
+    word-wrap: break-word;
+    /* Prevent long strings from breaking layout */
+}
+
+/* Ensure lists inside the modal body are styled reasonably */
+.my-modal-body ul,
+.my-modal-body ol {
+    text-align: left;
+    /* Or 'right' for RTL */
+    padding-left: 20px;
+    /* Indent list items */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+[dir="rtl"] .my-modal-body ul,
+[dir="rtl"] .my-modal-body ol {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.my-modal-body li {
+    margin-bottom: 5px;
+}
+
+
+.my-modal-actions {
+    display: flex;
+    justify-content: center;
+    /* Default: center buttons */
+    gap: 12px;
+    /* Space between buttons */
+    margin-top: 10px;
+    /* Space above action buttons */
+    flex-wrap: wrap;
+    /* Allow buttons to wrap on small screens */
+}
+
+/* --- Reusable Button Styles (adapt from your _modals.css or global button styles) --- */
+/* These should match your site's button styling system */
+.my-modal-btn {
+    /* Base class for modal buttons */
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: var(--v3-border-radius, 8px);
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    min-width: 100px;
+    /* Minimum button width */
+}
+
+.my-modal-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.my-modal-btn-primary {
+    background-color: var(--v3-primary-color, #007bff);
+    color: white;
+    border-color: var(--v3-primary-color, #007bff);
+}
+
+.my-modal-btn-primary:hover {
+    background-color: var(--v3-primary-dark-color, #0056b3);
+    border-color: var(--v3-primary-dark-color, #0056b3);
+}
+
+.my-modal-btn-danger {
+    background-color: var(--v3-danger-color, #dc3545);
+    color: white;
+    border-color: var(--v3-danger-color, #dc3545);
+}
+
+.my-modal-btn-danger:hover {
+    background-color: var(--v3-danger-dark-color, #c82333);
+    border-color: var(--v3-danger-dark-color, #c82333);
+}
+
+.my-modal-btn-secondary {
+    /* Example for a less prominent primary action */
+    background-color: var(--v3-secondary-color, #6c757d);
+    color: white;
+    border-color: var(--v3-secondary-color, #6c757d);
+}
+
+.my-modal-btn-secondary:hover {
+    background-color: var(--v3-secondary-dark-color, #545b62);
+    border-color: var(--v3-secondary-dark-color, #545b62);
+}
+
+.my-modal-btn-outline {
+    /* For cancel/secondary outline buttons */
+    background-color: transparent;
+    color: var(--v3-text-light, #6c757d);
+    border-color: var(--v3-border-color, #ced4da);
+}
+
+.my-modal-btn-outline:hover {
+    background-color: var(--v3-light-gray, #f8f9fa);
+    color: var(--v3-text-color, #333);
+}
+
+/* Specific alignment for actions if needed */
+.my-modal-actions.align-right {
+    justify-content: flex-end;
+}
+
+.my-modal-actions.align-left {
+    justify-content: flex-start;
+}

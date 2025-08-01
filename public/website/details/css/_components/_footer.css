@@ -1,0 +1,32 @@
+/* _components/_footer.css */
+.site-footer-bottom-v3 {
+    background-color: var(--v3-text-color);
+    color: #adb5bd;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.site-footer-bottom-v3 .container-v3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-footer-bottom-v3 p {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+}
+
+.social-links-v3 a {
+    color: #adb5bd;
+    margin: 0 8px;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.social-links-v3 a:hover {
+    color: var(--v3-accent-color);
+    text-decoration: none;
+}

@@ -1,0 +1,104 @@
+.auth-page-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-page-container .form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-page-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.auth-page-container .input-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.auth-page-container .input-group i.icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.auth-page-container .input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-page-container .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auth-page-container .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.auth-page-container .forgot-password {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.auth-page-container .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-page-container .social-login-divider {
+    text-align: center;
+    margin: 1rem 0;
+    color: #666;
+}
+
+.auth-page-container .social-login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #db4437;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-page-container .social-login-btn i {
+    margin-right: 8px;
+}
+
+.auth-page-container .toggle-form-text {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-page-container .toggle-form-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.auth-page-container .toggle-form-text a:hover {
+    text-decoration: underline;
+}

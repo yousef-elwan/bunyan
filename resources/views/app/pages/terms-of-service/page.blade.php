@@ -1,0 +1,84 @@
+@extends('app.layouts.default')
+
+@php($metaData = $pages_meta['term_of_service'])
+@section('og_title', $metaData['title'])
+@section('twitter_title', $metaData['title'])
+@section('description', $metaData['description'])
+@section('og_description', $metaData['description'])
+@section('twitter_description', $metaData['description'])
+@section('keywords', $metaData['keywords'])
+
+@push('css_or_js')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ asset('css/breadcrumb.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/privacyPolicy/css/style.css') }}">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+@endpush
+
+@section('content')
+    <section class="page-header-banner static-page-banner terms-banner-v3"
+        style="background-image: url('{{ Storage::disk('asset')->url('images/TermOfService/service.jpg') }}');">
+        <div class="container-v3 banner-text-content">
+            <p class="banner-subtitle-v3">{{ __('app/terms_of_service.banner_subtitle') }}</p>
+            <h1 class="banner-title-v3">{{ __('app/terms_of_service.banner_title') }}</h1>
+        </div>
+    </section>
+
+    <section class="static-content-section section-padding-v3">
+        <div class="container-v3 static-page-layout">
+
+            <aside class="static-page-sidebar card-v3" data-aos="fade-left">
+                <h3 class="sidebar-title">{{ __('app/terms_of_service.sidebar_legal_documents') }}</h3>
+                <ul class="sidebar-nav-links">
+                    <li>
+                        <a href="{{ route('privacy-policy') }}">
+                            {{ __('app/terms_of_service.sidebar_privacy_policy') }}
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('terms-of-use') }}">
+                            {{ __('app/terms_of_service.sidebar_terms_of_use') }}
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('contact-us') }}">
+                            {{ __('app/terms_of_service.sidebar_contact_us') }}
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </li>
+                </ul>
+                <hr class="sidebar-divider">
+                <h4 class="sidebar-help-title">{{ __('app/terms_of_service.sidebar_need_help') }}</h4>
+                <a href="{{ route('contact-us') }}" class="btn-v3 btn-v3-primary btn-block sidebar-cta-btn">
+                    {{ __('app/terms_of_service.sidebar_help_center') }} <i class="fas fa-headset"></i>
+                </a>
+                @isset($web_config['company_email'])
+                    <p class="sidebar-email-info">
+                        {{ __('app/terms_of_service.sidebar_email_info') }} <br>
+                        <a href="mailto:{{ $web_config['company_email'] }}">{{ $web_config['company_email'] }}</a>
+                    </p>
+                @endisset
+            </aside>
+
+            <div class="static-page-main-content card-v3" data-aos="fade-right">
+                <p class="content-category-label">{{ __('app/terms_of_service.content_category_label') }}</p>
+                <p class="last-updated">
+                    {{ __('app/terms_of_service.last_updated', ['date' => $legal['updated_at_formate'] ?? '']) }}</p>
+
+                <article>
+                    {!! $legal['content'] ?? '' !!}
+                </article>
+            </div>
+        </div>
+    </section>
+@endsection
+
+@push('script')
+    @vite(['resources/js/alpine/app/terms-of-service/main.js'])
+@endpush

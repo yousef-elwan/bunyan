@@ -1,0 +1,81 @@
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+
+.is-invalid+.invalid-feedback,
+.is-invalid~.invalid-feedback {
+    display: block;
+}
+
+.input-group input.is-invalid,
+.iti__tel-input.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.input-group input.is-invalid:focus,
+.iti__tel-input.is-invalid:focus {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.16rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.spinner-border {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: text-bottom;
+    border: .15em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+    margin-inline-end: 0.5rem;
+}
+
+.d-none {
+    display: none !important;
+}
+
+@keyframes spinner-border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.input-group {
+    position: relative;
+    /* Needed for password toggle button positioning */
+}
+
+.password-toggle-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    padding: 0 10px;
+}
+
+[dir="ltr"] .password-toggle-btn {
+    right: 0;
+}
+
+[dir="rtl"] .password-toggle-btn {
+    left: 0;
+}
+
+[dir="ltr"] .input-group input[type="password"],
+[dir="ltr"] .input-group input[type="text"].password-input {
+    padding-right: 40px;
+    /* Space for toggle button */
+}
+
+[dir="rtl"] .input-group input[type="password"],
+[dir="rtl"] .input-group input[type="text"].password-input {
+    padding-left: 40px;
+    /* Space for toggle button */
+}

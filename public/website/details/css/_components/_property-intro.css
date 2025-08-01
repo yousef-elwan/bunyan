@@ -1,0 +1,117 @@
+/* _components/_property-intro.css */
+.property-intro-v3 {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--v3-border-color);
+}
+
+.location-text-v3 i {
+    color: var(--v3-primary-color);
+    margin-left: 8px;
+}
+
+.price-actions-v3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.price-tag-v3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--v3-primary-color);
+    background-color: #e9ecef;
+    padding: 5px 15px;
+    border-radius: var(--v3-border-radius);
+}
+
+.actions-bar-v3 .action-btn-v3 {
+    background: transparent;
+    border: 1px solid var(--v3-border-color);
+    color: var(--v3-text-light);
+    padding: 8px;
+    margin-right: 6px;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.actions-bar-v3 .action-btn-v3:hover {
+    background-color: var(--v3-primary-color);
+    color: #fff;
+    border-color: var(--v3-primary-color);
+}
+
+.actions-bar-v3 .action-btn-v3.favorite-btn-v3.active {
+    color: #fff;
+    background-color: var(--v3-accent-color);
+    border-color: var(--v3-accent-color);
+}
+
+.actions-bar-v3 .action-btn-v3.favorite-btn-v3.active i {
+    color: #fff;
+}
+
+.actions-bar-v3 .action-btn-v3.blacklist-btn-trigger-v3.active {
+    background-color: var(--v3-danger-color);
+    color: #fff;
+    border-color: var(--v3-danger-color);
+}
+
+.action-btn-v3[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.property-meta-v3 {
+    font-size: 0.9rem;
+    color: var(--v3-text-light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.property-meta-v3 span i {
+    margin-left: 6px;
+    color: var(--v3-secondary-color);
+}
+
+/* Description specific styles, often part of property details/intro section */
+.property-description-v3 {
+    /* Already a card, but if any specific wrapper needed */
+    /* No specific styles needed if it's just a card-v3 */
+}
+
+.description-text-v3 {
+    color: var(--v3-text-light);
+    /* Duplicates p, but fine for explicitness */
+    max-height: 110px;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.description-text-v3.expanded-v3 {
+    max-height: 1000px;
+}
+
+#seeMoreBtnV3 {
+    /* Styles via .btn-v3 and .btn-v3-link */
+    margin-top: 10px;
+}

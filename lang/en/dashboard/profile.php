@@ -1,0 +1,71 @@
+<?php
+// lang/en/dashboard/profile.php
+return [
+    'page_title' => 'Account Settings',
+    'changeAvatar' => 'Change Avatar',
+    'Personal_information' => 'Personal Information',
+    'Privacy' => 'Security',
+    'them' => 'Preferences',
+    'edit_info_personal' => 'Edit Personal Information',
+    'fName' => 'First Name',
+    'lName' => 'Last Name',
+    'email' => 'Email Address',
+    'phone' => 'Phone Number',
+    'save' => 'Save Changes',
+    'saving' => 'Saving...',
+    'privacy_settings' => 'Password Settings',
+    'oldPass' => 'Current Password',
+    'newPass' => 'New Password',
+    'conPass' => 'Confirm New Password',
+    'changePassword' => 'Update Password',
+    'updatingPassword' => 'Updating...',
+    'them_setting' => 'Preferences',
+    'lan' => 'Language',
+
+    // New translations for notifications tab
+    'newsletter_subscription' => 'Newsletter Notifications',
+    'notification_settings' => 'Notification Settings',
+    'notification_types' => 'Notification Types',
+    'email_notifications' => 'Email Notifications',
+    'sms_notifications' => 'SMS Notifications',
+    'push_notifications' => 'Push Notifications',
+    'notification_frequency' => 'Notification Frequency',
+    'immediately' => 'Immediately',
+    'daily_summary' => 'Daily Summary',
+    'weekly_summary' => 'Weekly Summary',
+    'save_settings' => 'Save Settings',
+
+    // JS Messages
+    'avatar_upload_success' => 'Avatar updated successfully!',
+    'avatar_upload_error' => 'Failed to upload avatar.',
+    'info_update_success' => 'Information updated successfully!',
+    'info_update_error' => 'Failed to update information.',
+    'password_update_success' => 'Password changed successfully!',
+    'password_update_error' => 'Failed to change password.',
+    'password_mismatch' => 'New password and confirmation do not match.',
+    'error_title' => 'Error!',
+    'success_title' => 'Success!',
+    'unexpected_error' => 'An unexpected error occurred.',
+    'invalid_phone' => 'The phone number is invalid.',
+
+
+    'avatar_upload_confirm_title' => 'Confirm Avatar Change',
+    'avatar_upload_confirm_text' => 'Are you sure you want to change your profile picture?',
+    'confirm_upload_button' => 'Yes, Change Avatar',
+    'deleteAvatar' => 'Delete Avatar',
+    'confirmDeleteTitle' => 'Confirm Deletion',
+    'confirmDeleteText' => 'Are you sure you want to delete your profile picture?',
+    'confirmDeleteButton' => 'Yes, Delete it',
+    'cancelButton' => 'Cancel',
+    'deletedSuccessTitle' => 'Deleted!',
+    'deletedSuccessText' => 'Your avatar has been deleted successfully.',
+    'networkError' => 'Network error, please try again.',
+
+
+    'blacklisted_status' => 'Blacklisted',
+    'blacklisted_banner_title' => 'Account Alert.',
+    'blacklisted_banner_message' => 'Your account is currently blacklisted. Your ability to perform actions is restricted. Please contact support for assistance.',
+    // NEW & UPDATED KEYS for the alert box inside the profile page
+    'blacklisted_alert_title' => 'Account Restricted',
+    'blacklisted_alert_message' => 'This account is blacklisted. Most actions, like creating new content, are disabled. Please contact support.',
+];

@@ -1,0 +1,297 @@
+/* --- Categories Section Carousel Styles (Old Design Match) --- */
+.categories-section-carousel {
+    /* padding: 40px 0; */
+    padding-top: 20px;
+    background-color: var(--white-color);
+    /* White background as per screenshot */
+    /* border-top: 1px solid #f0f0f0; /* Optional: very light top border */
+    /* border-bottom: 1px solid #f0f0f0; /* Optional: very light bottom border */
+}
+
+.categories-section-carousel .section-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.old-design-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+    border: 1px solid #E9EAEC;
+    border-radius: 16px;
+    padding: 20px 10px;
+    text-align: center;
+    min-height: 130px;
+    /* Or use height: 100% on swiper-slide */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    color: #555;
+    width: 100%;
+    /* Ensure it fills the swiper-slide */
+    box-sizing: border-box;
+
+    width: 125px;
+    height: 116px;
+}
+
+.category-swiper {
+    /* The main Swiper container */
+    padding-bottom: 30px;
+    /* Space for pagination if below */
+}
+
+.swiper-slide {
+    /* Ensure slides allow content to stretch */
+    height: auto;
+    /* Or set a specific height if you want all cards to be uniform regardless of content */
+    display: flex;
+    /* Helps with vertical alignment if needed */
+}
+
+.old-design-category-card:hover {
+    border-color: #D0D3D6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: var(--primary-color);
+    /* Change text color on hover */
+}
+
+.odcc-icon-wrapper {
+    /* width: 50px; */
+    /* Container for the icon */
+    /* height: 50px; */
+    /* border: 1px solid #E0E0E0; */
+    /* Border around the icon placeholder */
+    border-radius: 8px;
+    /* Slightly rounded corners for icon box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    /* Space below icon */
+    background-color: #F8F9FA;
+    /* Very light gray for icon background */
+
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.odcc-icon-wrapper img {
+    /* max-width: 70%; */
+    /* Ensure icon fits well within its wrapper */
+    /* max-height: 70%; */
+    object-fit: contain;
+    opacity: 0.7;
+
+    /* Make placeholder icon slightly transparent */
+}
+
+/* If using Font Awesome icons instead of img: */
+/*
+.odcc-icon-wrapper i {
+    font-size: 24px;
+    color: #6C757D;
+}
+*/
+
+.odcc-name {
+    font-size: 0.9rem;
+    /* Adjust as needed */
+    font-weight: 500;
+    /* Regular weight for category name */
+    color: inherit;
+    /* Inherits color from parent <a>, changes on hover */
+    margin-bottom: 2px;
+}
+
+.odcc-count {
+    font-size: 0.8rem;
+    color: #777;
+    /* Lighter gray for count */
+}
+
+.old-design-category-card:hover .odcc-count {
+    color: var(--primary-color);
+    /* Change count color on hover too */
+}
+
+
+/* Owl Carousel Styles for Category Carousel */
+.category-carousel.owl-theme .owl-nav {
+    margin-top: 0;
+    position: absolute;
+    top: calc(50% - 25px);
+    /* Adjust vertical position */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.category-carousel.owl-theme .owl-nav [class*='owl-'] {
+    font-size: 1.5rem !important;
+    /* Arrow size */
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #777 !important;
+    /* Arrow color */
+    margin: 0 !important;
+    padding: 5px 10px !important;
+    border-radius: 50% !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    pointer-events: all;
+}
+
+.category-carousel.owl-theme .owl-nav .owl-prev {
+    position: absolute;
+    right: -15px;
+    /* Adjust position */
+}
+
+.category-carousel.owl-theme .owl-nav .owl-next {
+    position: absolute;
+    left: -15px;
+    /* Adjust position */
+}
+
+.category-carousel.owl-theme .owl-nav [class*='owl-']:hover {
+    background: var(--primary-color) !important;
+    color: var(--white-color) !important;
+}
+
+.category-carousel.owl-theme .owl-dots {
+    margin-top: 25px !important;
+    text-align: center;
+}
+
+.category-carousel.owl-theme .owl-dots .owl-dot span {
+    width: 8px !important;
+    /* Smaller dots */
+    height: 8px !important;
+    background: #D6D6D6 !important;
+}
+
+.category-carousel.owl-theme .owl-dots .owl-dot.active span,
+.category-carousel.owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--primary-color) !important;
+}
+
+
+.category-swiper .swiper-button-prev {
+    right: 5px;
+    left: auto;
+}
+
+/* RTL: Prev on right */
+.category-swiper .swiper-button-next {
+    left: 5px;
+    right: auto;
+}
+
+/* RTL: Next on left */
+
+.category-swiper .swiper-button-prev,
+.category-swiper .swiper-button-next {
+    color: #777;
+    /* Arrow color */
+    width: 30px;
+    /* Adjust size */
+    height: 30px;
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    /* border-radius: 50%; */
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); */
+    top: 45%;
+    /* Adjust vertical position */
+}
+
+.category-swiper .swiper-button-prev::after,
+/* For Font Awesome icons if preferred */
+.category-swiper .swiper-button-next::after {
+    font-size: 1rem;
+    /* Adjust icon size */
+}
+
+.category-swiper .swiper-button-prev:hover,
+.category-swiper .swiper-button-next:hover {
+    color: var(--primary-color);
+}
+
+.category-swiper .swiper-pagination-bullet {
+    background: #D6D6D6;
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+}
+
+.category-swiper .swiper-pagination-bullet-active {
+    background: var(--primary-color);
+}
+
+.category-swiper-pagination {
+    /* Container for dots */
+    bottom: 0px !important;
+    /* Position dots at the bottom */
+}
+
+/* Responsive Adjustments for Category Carousel */
+@media (max-width: 992px) {
+    .category-carousel.owl-theme .owl-nav {
+        display: none;
+        /* Hide nav arrows on tablets/mobile */
+    }
+
+    .old-design-category-card {
+        /* min-height: 120px; */
+        padding: 15px 8px;
+    }
+
+    .odcc-icon-wrapper {
+        width: 45px;
+        height: 45px;
+        margin-bottom: 10px;
+    }
+
+    .odcc-name {
+        font-size: 0.85rem;
+    }
+
+    .odcc-count {
+        font-size: 0.75rem;
+    }
+
+    .category-swiper .swiper-button-prev,
+    .category-swiper .swiper-button-next {
+        display: none;
+        /* Hide nav arrows on tablets/mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-section-carousel .section-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .old-design-category-card {
+        /* min-height: 110px; */
+        /* padding: 12px 5px; */
+        border-radius: 12px;
+    }
+
+    .odcc-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .odcc-name {
+        font-size: 0.8rem;
+    }
+
+    .odcc-count {
+        font-size: 0.7rem;
+    }
+}
